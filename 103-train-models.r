@@ -6,9 +6,11 @@
 
 sessionInfo()
 
-## Local parallelization
+## Can be run in run in parallel by commenting out the second line below and
+## uncommenting the third
 library("doMC")
-registerDoMC(min(5, parallel::detectCores() - 1))
+registerDoSEQ()
+## registerDoMC(min(5, parallel::detectCores() - 1))
 
 ## Load plyr before dplyr -- forcing this here since some of the ML packages
 ## call plyr
