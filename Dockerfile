@@ -7,8 +7,8 @@ FROM rocker/verse:3.4.3
 # filesystem structure
 RUN install2.r --error \
     Amelia C50 RcppRoll car caret doMC doRNG foreach \
-    ggtern glmx iterators kernlab mlogit multiwayvcov pscl \
-    randomForest sqldf tikzDevice
+    ggtern glmx iterators kernlab mlogit multiwayvcov plyr \
+    pscl randomForest sqldf tikzDevice
 
 # Base directory --- mirroring the ACCRE file system here
 ARG base=/home/kenkelb/pppr
