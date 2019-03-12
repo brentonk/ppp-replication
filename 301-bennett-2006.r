@@ -21,12 +21,6 @@ doe_dir_dyad <- read.csv("results/predict-dir-dyad.csv")
 data_bennett_2006 <- data_bennett_2006[data_bennett_2006$cwongo != 1,]
 
 ## construct some variables, as per Bennett's .do file
-data_bennett_2006$demint1orig <- data_bennett_2006$demint1
-data_bennett_2006$demint2orig <- data_bennett_2006$demint2
-data_bennett_2006$demi1simorig <- data_bennett_2006$demi1sim
-data_bennett_2006$di1di2orig <- data_bennett_2006$di1di2
-data_bennett_2006$d1d2isqrorig <- data_bennett_2006$d1d2isqr
-
 data_bennett_2006$demint1 <- data_bennett_2006$polity21
 data_bennett_2006$demint2 <- data_bennett_2006$polity22
 data_bennett_2006$demi1sim <- data_bennett_2006$demi1simpol

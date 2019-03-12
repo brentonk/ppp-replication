@@ -135,22 +135,23 @@ Obtained from \citet{bennett2006data}.
   \item \texttt{ccode1}: Country code for State 1.
   \item \texttt{ccode2}: Country code for State 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{cwinit}: Dispute initiation.
-  \item \texttt{demint1}: Democracy of initiator.
-  \item \texttt{demint2}: Democracy of target.
-  \item \texttt{demi1sim}: Interaction of \texttt{demint1} and similarity.
-  \item \texttt{di1di2}: Interaction of \texttt{cwint} and \texttt{demint1}.
-  \item \texttt{d1d2isqr}: Interaction of \texttt{cwint} and \texttt{demint1} squared.
+  \item \texttt{cwinit}: Indicator for dispute initiation (1 = initiation, 0 = no initiation).
+  \item \texttt{polity21}: Democracy of initiator.
+  \item \texttt{polity22}: Democracy of target.
+  \item \texttt{demi1simpol}: Interaction of \texttt{polity21} and similarity.
+  \item \texttt{di1di2pol}: Interaction of \texttt{polity21} and \texttt{polity22}.
+  \item \texttt{d1d2isqrpol}: Square of \texttt{di1di2pol}.
   \item \texttt{cap\_1}: Capability of state 1.
   \item \texttt{cap\_2}: Capability of state 2.
-  \item \texttt{Indist}: Natural log of distance between states.
-  \item \texttt{anypact}: Dummy variable indicating whether the two states in the dyad have a formal alliance.
+  \item \texttt{lndist}: Natural log of distance between states.
+  \item \texttt{anypact}: Indicator for presence of a formal alliance between the states in the dyad (1 = alliance, 0 = no alliance).
   \item \texttt{priordisputeproportion}: Prior disputes between the two states in the dyad.
   \item \texttt{parity}: Parity in terms of capabilities.
   \item \texttt{cwpcetyrs}: Peace years.
   \item \texttt{cwpceyr1}: Peace years spline 1.
   \item \texttt{cwpceyr2}: Peace years spline 2.
   \item \texttt{cwpceyr3}: Peace years spline 3.
+  \item \texttt{cwongo}: Indicator for ongoing war (1 = ongoing war, 0 = no ongoing war).
 \end{itemize}
 
 \subsection{data-dreyer-2010.csv}
