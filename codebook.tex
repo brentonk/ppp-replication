@@ -1,0 +1,664 @@
+\documentclass[12pt]{article}
+
+\usepackage{pdfpages}
+\usepackage{natbib}
+\usepackage{hyperref}
+
+% natbib
+\bibpunct{(}{)}{;}{a}{}{,}
+\renewcommand{\harvardurl}[1]{\textbf{URL:} \url{#1}}
+
+\title{Codebook for ``Prediction, Proxies, and Power''}
+\author{Robert J. Carroll \and Brenton Kenkel}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+
+\section{Dispute Outcome Expectations (DOE) Scores}
+
+\subsection{predict-dir-dyad.csv and predict-dyad.csv}
+
+The files \texttt{predict-dir-dyad.csv} and \texttt{predict-dyad.csv} contain the Dispute Outcome Expectations measures whose construction is described in the article.
+They contain observations on all dyad-years (directed and undirected, respectively) from 1816 to 2007, according to the Correlates of War Project's State System Membership data.
+
+Both datasets contain the same variables:
+\begin{itemize}
+  \item \texttt{ccode\_a}: Correlates of War code for Country A.
+  \item \texttt{ccode\_b}: Correlates of War code for Country B.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{VictoryB}: Estimated probability of victory by Country B.
+  \item \texttt{Stalemate}: Estimated probability of stalemate.
+  \item \texttt{VictoryA}: Estimated probability of victory by Country A.  Always equals $1 - \mathtt{VictoryB} - \mathtt{Stalemate}$.
+\end{itemize}
+
+In the directed data, Country A is assumed to be the initiator and Country B is assumed to be the target of the hypothetical dispute for which probabilities are calculated.
+In the undirected data, values represent the average of the estimates for when Country A is the initiator and when Country A is the target.
+
+
+\section{Correlates of War Data}
+
+The DOE scores are calculated using two datasets from the Correlates of War project: the Militarized Interstate Disputes data, v4.01 \citep{Palmer:2015hp} and the National Material Capabilities data, v4.0 \citep{singer1972}.
+
+\subsection{data-mida-4.01.csv and data-midb-4.01.csv}
+
+The file \texttt{data-mida-4.01.csv} contains the dispute-level Militarized Interstate Disputes data.
+The file \texttt{data-midb-4.01.csv} contains the dispute-participant--level data.
+Their codebook is appended to the end of this document.
+
+\subsection{data-nmc-4.0.csv}
+
+The file \texttt{data-nmc-4.0.csv} contains the National Material Capabilities data.
+Its codebook is appended to the end of this document.
+
+
+\section{Replication of Reed et al.\ (2008)}
+
+Replication data for \citet{reed2008war}.
+Obtained from \citet{reed2008data}.
+
+\subsection{data-reed-et-al-2008.dta}
+
+This file contains the main replication data for Reed et al.'s analysis.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for State 1.
+  \item \texttt{ccode2}: Country code for State 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{cwmid}: Indicator for militarized interstate dispute.
+  \item \texttt{alliance}: Indicator for if the states share a defense pact, neutrality agreement, or entente pact.
+  \item \texttt{demlow}: Lower of the states' Polity IV scores.
+  \item \texttt{logdist}: Natural logarithm of the distance between state capitals.
+  \item \texttt{peaceyrs}: Years since last dispute between the states.
+  \item \texttt{\_spline1}, \texttt{\_spline2}, \texttt{\_spline3}: Cubic spline basis for years since last dispute.
+  \item \texttt{twomaj}: Indicator for both states being major powers.
+  \item \texttt{zqpo\_1}: Absolute difference between status quo (ordinal scale measure) and balance of power.
+  \item \texttt{zqpo2\_1}: Squared difference between status quo (ordinal scale measure) and balance of power.
+  \item \texttt{zqpb\_1}: Absolute difference between status quo (binary scale measure) and balance of power.
+  \item \texttt{zqpb2\_1}: Squared difference between status quo (binary scale measure) and balance of power.
+\end{itemize}
+
+\subsection{data-idealpoint4600.dta}
+
+This file contains the estimated state ideal points used by Reed et al.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for State 1.
+  \item \texttt{ccode2}: Country code for State 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{meana}: Average of posterior distribution of ideal point for State 1.
+  \item \texttt{lowa}: Lowest draw from posterior distribution of ideal point for State 1.
+  \item \texttt{higha}: Highest draw from posterior distribution of ideal point for State 1.
+  \item \texttt{meanb}: Average of posterior distribution of ideal point for State 2.
+  \item \texttt{lowb}: Lowest draw from posterior distribution of ideal point for State 2.
+  \item \texttt{highb}: Highest draw from posterior distribution of ideal point for State 2.
+\end{itemize}
+
+
+
+\section{Other Replication Studies}
+
+% See http://best-practices.dataverse.org/data-citation/ for dataset citation
+
+
+
+\subsection{data-arena-palmer-2009.csv}
+
+Replication data for \citet{Arena:2009gk}.
+Obtained from \citet{arena2009data}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for State 1.
+  \item \texttt{ccode2}: Country code for State 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{init}: Indicator for dispute initiation.
+  \item \texttt{gov}: Government's position along the left-right ideological spectrum. 
+  \item \texttt{d\_un}: Change in unemployment.
+  \item \texttt{di\_nf}: Change in inflation.
+  \item \texttt{d\_gro}: Change in growth.
+  \item \texttt{du\_gov}: Interaction between \texttt{d\_un} and \texttt{gov}.
+  \item \texttt{di\_gov}: Interaction between \texttt{d\_inf} and \texttt{gov}.
+  \item \texttt{dg\_gov}: Interaction between \texttt{d\_gro} and \texttt{gov}.
+  \item \texttt{cap\_1}: Material capabilities of the democratic state.
+  \item \texttt{ipeace}: Number of peace quarters in the dyad.
+\end{itemize}
+
+\subsection{data-bennett-2006.csv}
+
+Replication data for \citet{Bennett:2006gp}.
+Obtained from \citet{bennett2006data}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for State 1.
+  \item \texttt{ccode2}: Country code for State 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{cwinit}: Dispute initiation.
+  \item \texttt{demint1}: Democracy of initiator.
+  \item \texttt{demint2}: Democracy of target.
+  \item \texttt{demi1sim}: Interaction of \texttt{demint1} and similarity.
+  \item \texttt{di1di2}: Interaction of \texttt{cwint} and \texttt{demint1}.
+  \item \texttt{d1d2isqr}: Interaction of \texttt{cwint} and \texttt{demint1} squared.
+  \item \texttt{cap\_1}: Capability of state 1.
+  \item \texttt{cap\_2}: Capability of state 2.
+  \item \texttt{Indist}: Natural log of distance between states.
+  \item \texttt{anypact}: Dummy variable indicating whether the two states in the dyad have a formal alliance.
+  \item \texttt{priordisputeproportion}: Prior disputes between the two states in the dyad.
+  \item \texttt{parity}: Parity in terms of capabilities.
+  \item \texttt{cwpcetyrs}: Peace years.
+  \item \texttt{cwpceyr1}: Peace years spline 1.
+  \item \texttt{cwpceyr2}: Peace years spline 2.
+  \item \texttt{cwpceyr3}: Peace years spline 3.
+\end{itemize}
+
+\subsection{data-dreyer-2010.csv}
+
+Replication data for \citet{Dreyer:2010cu}.
+Obtained from \citet{dreyer2010data}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{mid}: Militarized interstate dispute.
+  \item \texttt{rap\_iss\_accum}: Rapid issue accumulation.
+  \item \texttt{grad\_iss\_accum}: Gradual issue accumulation.
+  \item \texttt{cap\_rat}: Capability ratio.
+  \item \texttt{maj\_power}: Major power.
+  \item \texttt{alliance}: Alliance.
+  \item \texttt{democ}: Democracy.
+  \item \texttt{contig}: Contiguity.
+  \item \texttt{spline\_1}: Spline 1.
+  \item \texttt{spline\_2}: Spline 2.
+  \item \texttt{spline\_3}: Spline 3.
+  \item \texttt{spline\_4}: Spline 4. 
+  \item \texttt{rivdyad}: Rivalry dyad.
+\end{itemize}
+
+\subsection{data-fordham-2008.csv}
+
+Replication data for \citet{Fordham:2008gs}.
+Obtained from \citet{fordham2008data}.
+
+\begin{itemize}
+  \item \texttt{ccode}: Country code.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{atopdo}: Alliance onset.
+  \item \texttt{lnexports1}: Log of exports in previous year.
+  \item \texttt{lndistance}: Log of capital to capital distance from United States
+  \item \texttt{lntotmids10\_1}:  Log of MIDs in which the United States was involved in the preceding 10 years.
+  \item \texttt{lntotmids10\_2}: Log of MIDs in which other dyad member was involved in the preceding 10 years.
+  \item \texttt{lndyadmid10}: Log of MIDs between United States and other dyad member in the preceding 10 years.
+  \item \texttt{"lncap\_1}: Log of COW capabilities index for United States.
+  \item \texttt{"lncap\_2}: Log of COW capabilities index for other dyad member.
+  \item \texttt{polity22}: Polity score for other dyad member.
+  \item \texttt{coldwar}: Cold war era (1946-1989)
+  \item \texttt{noallyrs}: Previous alliance onsets.
+  \item \texttt{\_prefail}: Previous alliance collapses.
+  \item \texttt{\_spline1}: Spline 1.
+  \item \texttt{\_spline2}: Spline 2.
+  \item \texttt{\_spline3}: Spline 3.
+\end{itemize}
+
+\subsection{data-fuhrmann-sechser-2014.csv}
+
+Replication data for \citet{Fuhrmann:2014kd}.
+Obtained from \citet{fuhrmann2014data}.
+
+\begin{itemize}
+  \item \texttt{state\_a}: Country code for state 1.
+  \item \texttt{state\_b}: Country code for state 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{military\_conflict}: Military conflict.
+  \item \texttt{defense\_pact\_nuclear\_cow}: Defense pact with nuclear power.
+  \item \texttt{nuclear\_deployment}: Nuclear deployment.
+  \item \texttt{defense\_pact\_nonnuclear\_cow}: Defense pact with nonnuclear power.
+  \item \texttt{us\_troops}: U.S. troops.
+  \item \texttt{challenger\_nuclear\_weapons}: Nuclear challenger.
+  \item \texttt{target\_nuclear\_weapons}: Nuclear target.
+  \item \texttt{contiguity}: Contiguity.
+  \item \texttt{alliance\_with\_challenger\_cow}: Alliance with challenger.
+  \item \texttt{foreign\_policy\_similarity}: Foreign policy similarity.
+  \item \texttt{power\_ratio}: Power ratio.
+  \item \texttt{challenger\_polity}: Challenger polity.
+  \item \texttt{target\_polity}: Target polity.
+  \item \texttt{polity\_interaction}: Interaction between \texttt{target\_polity} and \texttt{challenger\_polity}
+  \item \texttt{time\_conflict}: Time.
+  \item \texttt{time\_conflict2}: Time squared.
+  \item \texttt{time\_conflict3}: Time cubed.
+  \item \texttt{politically\_relevant}: Politically relevant.
+\end{itemize}
+
+\subsection{data-gartzke-2007.csv}
+
+Replication data for \citet{gartzke2007}.
+Obtained from \citet{gartzke2007data}.
+
+\begin{itemize}
+  \item \texttt{statea}: COW country code for State A.
+  \item \texttt{stateb}: COW country code for State B.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{maoznewl}: Indicator for Militarized Interstate Dispute occurrence.
+  \item \texttt{demlo}: Lowest Polity IV score in the dyad, scaled to 0--10.
+  \item \texttt{demhi}: Highest Polity IV score in the dyad, scaled to 0--10.
+  \item \texttt{deplo}: Lowest IMF index of economic openness in the dyad.
+  \item \texttt{capopenl}: Lowest score of trade openness in the dyad.
+  \item \texttt{rgdppclo}: Lowest GDP per capita in the dyad.
+  \item \texttt{contig}: Indicator for whether the dyad is contiguous.
+  \item \texttt{gdpcontg}: Interaction of \texttt{rgdppclo} and \texttt{contig}.
+  \item \texttt{logdstab}: Natural logarithm of great circle distance between the dyad's capitals.
+  \item \texttt{majpdyds}: Indicator for if either state in the dyad is a major power.
+  \item \texttt{alliesr}: Indicator for the presence of a defense pact, neutrality pact, or entente in the dyad.  
+  \item \texttt{lncaprt}: Natural logarithm of capability ratio.
+  \item \texttt{namerica}: Indicator for both states being in North America.
+  \item \texttt{samerica}: Indicator for both states being in South America.
+  \item \texttt{europe}: Indicator for both states being in Europe.
+  \item \texttt{africa}: Indicator for both states being in Sub-Saharan Africa.
+  \item \texttt{nafmeast}: Indicator for both states being in North Africa or the Middle East.
+  \item \texttt{asia}: Indicator for both states being in Asia.
+  \item \texttt{\_spline1}, \texttt{\_spline2}, \texttt{\_spline3}: Cubic spline basis for years since last dyadic dispute.
+\end{itemize}
+
+\subsection{data-huth-2012.csv}
+
+Replication data for \citet{Huth:2012gf}.
+Obtained from \citet{huth2012data}.
+
+\begin{itemize}
+  \item \texttt{cowcntry}: Country code for state 1.
+  \item \texttt{opponent}: Country code for state 2.
+  \item \texttt{dvsqb}: Decision to challenge the status quo.
+  \item \texttt{slc3b}: Strong legal claims.
+  \item \texttt{demdum}: Democracy indicator.
+  \item \texttt{milratio}: Military balance.
+  \item \texttt{alliance}: Alliance.
+  \item \texttt{strvalue}: Military strength.
+  \item \texttt{ethvalue1}: Ethnic ties.
+  \item \texttt{endriv5b}: Enduring rivalry.
+  \item \texttt{sqtime1}: Number of months to event of interest.
+  \item \texttt{begmopog}: 
+  \item \texttt{date}: Date.
+  \item \texttt{dispno2}: Unique identifier for each separate territorial dispute.
+\end{itemize}
+
+\subsection{data-jung-2014.csv}
+
+Replication data for \citet{Jung:2014jq}.
+Obtained from \citet{jung2014data}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2. 
+  \item \texttt{year}: Year of observation.
+  \item \texttt{dyadid}: Dyad id.
+  \item \texttt{initiate}: Initiation of interstate conflict
+  \item \texttt{dom}: Domestic unrest.
+  \item \texttt{powtg\_cinc}: Power ratio.
+  \item \texttt{identg}: Identity target.
+  \item \texttt{tertg}: Territory target. 
+  \item \texttt{hegtg}: Hegemony target.
+  \item \texttt{caprat\_1}: Relative power.
+  \item \texttt{cowally\_1}: Ally.
+  \item \texttt{depend1\_1}: Economic interdependence of state 1.
+  \item \texttt{depend2\_1}: Economic interdependence of state 2.
+  \item \texttt{jointdemo\_1}: Joint democracy.
+  \item \texttt{jointminor\_1}: Joint minor power.
+  \item \texttt{border}: Border.
+  \item \texttt{lndistance}: Natural log of distance between two capitals.
+  \item \texttt{mid1peace}: Years since last dyadic conflict.
+  \item \texttt{mid1sp1}: Spline 1.
+  \item \texttt{mid1sp2}: Spline 2.
+  \item \texttt{mid1sp3}: Spline 3.
+\end{itemize}
+
+\subsection{data-morrow-2007.csv}
+
+Replication data for \citet{morrow2007}.
+Obtained from \citet{morrow2007data}.
+
+\begin{itemize}
+  \sloppy
+  \item \texttt{violator\_4\_ordinal\_comply}: Violator's noncompliance.
+  \item \texttt{victim\_4\_ordinal\_comply}: Victim's noncompliance.
+  \item \texttt{victim\_clar\_4\_ordinal\_comply}: Clarity of victim's violations interacted with \texttt{victim\_4\_ordinal\_comply}.
+  \item \texttt{joint\_ratify\_4\_ordinal\_recip}: Interaction of \texttt{joint\_ratify} and \texttt{victim\_4\_ordinal\_comply}.
+  \item \texttt{joint\_ratify\_clar\_recip}: Interaction of \texttt{joint\_ratify} and clarity of recipients violations.
+  \item \texttt{victim\_individual\_comply}: Individual violations.
+  \item \texttt{victim\_state\_comply}: State violations multiplied with victim's noncompliance.
+  \item \texttt{joint\_ratify}: Joint ratification.
+  \item \texttt{violator\_ratified}: Violator ratified.
+  \item \texttt{violator\_democracy7}: Violator democracy.
+  \item \texttt{joint\_ratify\_democracy7}: Interaction of \texttt{joint\_ratify} and texttt{violator\_democracy7}.
+  \item \texttt{violator\_ratified\_democracy7}: Interaction of \texttt{violator\_ratified} and \texttt{violator\_democracy7}.
+  \item \texttt{powerratio}: Power ratio.
+  \item \texttt{joint\_ratify\_power}: Interaction of \texttt{powerratio} and \texttt{joint\_ratify}.
+  \item \texttt{Aerial}: Aerial bombing.
+  \item \texttt{Armistice}: Armistice.
+  \item \texttt{CBW}: Chemical and biological warfare.
+  \item \texttt{Civilians}: Treatment of civilians.
+  \item \texttt{Cultural}: Protection of cultural property.
+  \item \texttt{HighSeas}: Conduct on the high seas.
+  \item \texttt{POWs}: Prisoners of war.
+  \item \texttt{violator\_initiate}: Violator initiator.
+  \item \texttt{violator\_deathsper1000population}: Violator battle deaths per 1,000 population.
+  \item \texttt{victim\_victor}: Violator lost.
+  \item \texttt{victim\_victor\_power}: Interaction of \texttt{victim\_victor} and \texttt{powerratio}.
+  \item \texttt{data\_quality}: Quality of data.
+  \item \texttt{WarDeclaration}: Declaration of war.
+  \item \texttt{violatorccode}: Violator country code.
+  \item \texttt{victimccode}: Victim country code.
+  \item \texttt{startyear}: Year of observation.
+\end{itemize}
+
+\subsection{data-owsiak-2012.csv}
+
+Replication data for \citet{Owsiak:2012dx}.
+Obtained from \citet{owsiak2012data}.
+
+\begin{itemize}
+  \item \texttt{cdyad}: Dyad code.
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2. 
+  \item \texttt{year}: Year of observation.
+  \item \texttt{midonset}: Militarized interstate dispute onset.
+  \item \texttt{settlem}: Settled borders.
+  \item \texttt{jtdem6}: Jointly democratic.
+  \item \texttt{majinvolve}: Major state involvement.
+  \item \texttt{atopally}: States are allied to each other.
+  \item \texttt{lncincratio}: Natural log of CINC ratio.
+  \item \texttt{peaceyears}: Peace years.
+  \item \texttt{\_spline1}: Spline 1.
+  \item \texttt{\_spline2}: Spline 2.
+  \item \texttt{\_spline3}: Spline 3.
+\end{itemize}
+
+
+\subsection{data-park-colaresi-2014.csv}
+
+Replication data for \citet{Park:2014gg}.
+Obtained from \citet{park2014data}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2. 
+  \item \texttt{year}: Year of observation.
+  \item \texttt{cwmid}: Militarized interstate dispute onset.
+  \item \texttt{lowdem}: Lowest level of democracy.
+  \item \texttt{lowgdp}: Lowest GDP. 
+  \item \texttt{landcontig}: Contiguous land.
+  \item \texttt{nlparity}: Parity
+  \item \texttt{beckpeace}: Peace year (Linear).
+  \item \texttt{spline1}: Peace year spline 1.
+  \item \texttt{spline2}: Peace year spline 2.
+  \item \texttt{spline3}: Peace year spline 3.
+  \item \texttt{cvwonset}: Civil war onset.
+  \item \texttt{dyaddur}: Dyad age.
+  \item \texttt{samecolony}: Colonial history.
+  \item \texttt{ethborder}: Ethnic border.
+  \item \texttt{terrsim}: Terr. similarity.
+  \item \texttt{prev.mid.count}: Previous disputes.
+  \item \texttt{PostColdWar}: Post-Cold War.
+  \item \texttt{majdyad}: Major powers.
+\end{itemize}
+
+
+\subsection{data-salehyan-2008-jop.csv}
+
+Replication data for \citet{salehyan2008}.
+Obtained from \citet{salehyan2008jopdata}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{cwhostd}: Militarized interstate dispute onset.
+  \item \texttt{extbase}: External base.
+  \item \texttt{intriv}: Intervention (Reagan).
+  \item \texttt{lcaprat}: Power ratio.
+  \item \texttt{defpact}: Defense pact.
+  \item \texttt{politylo}: Democracy.
+  \item \texttt{peaceyears}: Peace years.
+   \item \texttt{s1}: Spline 1.
+  \item \texttt{s2}: Spline 2.
+  \item \texttt{s3}: Spline3.
+\end{itemize}
+
+
+\subsection{data-salehyan-2008-ajps.csv}
+
+Replication data for \citet{Salehyan:2008es}.
+Obtained from \citet{salehyan2008ajpsdata}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{mzinit\_lead}: Militarized interstate disputes.
+  \item \texttt{logref1}: Refugee stock in initiator.
+  \item \texttt{logref2}: Refugee stock from initiator.
+  \item \texttt{uppcivcon1}: Civil war in initiator.
+  \item \texttt{uppcivcon2}: Civil war in target.
+  \item \texttt{dem1}: Democracy of initiator.
+  \item \texttt{dem2}: Democracy of target.
+  \item \texttt{trans1}: Transitional initiator.
+  \item \texttt{trans2}: Transitional target.
+  \item \texttt{contig}: Contiguity
+  \item \texttt{colcont}: Colonial contiguity.
+  \item \texttt{capshare}: Capability share.
+  \item \texttt{s\_wt\_glo}: Alliance S-score.
+  \item \texttt{depend1}: Initiator's trade dependency.
+  \item \texttt{depend2}: Target's trade dependency.
+  \item \texttt{igos}: Shared IGO membership.
+  \item \texttt{lpcyrs}: Peace years.
+  \item \texttt{lpcyrs1}: Peace years spline 1.
+  \item \texttt{lpcyrs2}: Peace years spline 2.
+  \item \texttt{lpcyrs3}: Peace years spline 3.
+\end{itemize}
+
+
+\subsection{data-sai-2006.csv}
+
+Replication data for \citet{Sobek:2006cn}.
+Obtained from \citet{sobek2006data}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{cwmid}: Onset of international conflict.
+  \item \texttt{demlow}: Low democracy.
+  \item \texttt{demhigh}: High democracy.
+  \item \texttt{caprat}: Capability ratio.
+  \item \texttt{ally}: Allies.
+  \item \texttt{disimciv}: Dissimilar civilizations.
+  \item \texttt{s\_un\_glo}: Preference similarity.
+  \item \texttt{pol\_rel}: Political relevance.
+  \item \texttt{contig}: Contiguity.
+  \item \texttt{physintlow}: Physical integrity index.
+  \item \texttt{empinxlow}: Empowerment rights index.
+  \item \texttt{peaceyearsmid}: Peace years.
+  \item \texttt{\_spline1mid}: Spline 1.
+  \item \texttt{\_spline2mid}: Spline 2.
+  \item \texttt{\_spline3mid}: Spline 3.
+\end{itemize}
+
+\subsection{data-usg-2012.csv}
+
+Replication data for \citet{Uzonyi:2012im}.
+Obtained from \citet{uzonyi2012data}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{cowrecipx}: MID reciprocation.
+  \item \texttt{acc1nomvx}: Audience cost capacity
+  \item \texttt{personal1w}: Personalist.
+  \item \texttt{single1w}: Single-party.
+  \item \texttt{military1w}: Military.
+  \item \texttt{hybrid1w}: Hybrid.
+  \item \texttt{other1w}: Other autocracy.
+  \item \texttt{dynastic1w}: Dynastic.
+  \item \texttt{nondynastic1w}: Non-dynastic.
+  \item \texttt{interregnaw}: Interregna autocracy
+  \item \texttt{interregnademw}: Interregna democracy
+  \item \texttt{majmaj}: Initiator major power, target major power.
+  \item \texttt{minmaj}: Initiator minor power, target major power.
+  \item \texttt{majmin}: Initiator major power, target minor power.
+  \item \texttt{powerratio}: Power ratio.
+  \item \texttt{allies}: Alliance.
+  \item \texttt{s\_wt\_glo}: Allies dyadic alliance portfolio summary.
+  \item \texttt{s\_ld\_1}: Initiator's alliance portfolio similarity with the regional leader.
+  \item \texttt{s\_ld\_2}: Target's alliance portfolio similarity with the regional leader.
+  \item \texttt{contig400}: Contiguity
+  \item \texttt{terr1}: Territorial dispute.
+  \item \texttt{regime1}: Regime dispute.
+  \item \texttt{policy1}: Policy dispute.
+  \item \texttt{other1}: Other dispute.
+  \item \texttt{originator}
+  \end{itemize}
+
+
+\subsection{data-weeks-2008.csv}
+
+Replication data for \citet{Weeks:2008cj}.
+Obtained from \citet{weeks2008data}.
+
+\begin{itemize}
+  \item \texttt{ccodecow}: Country code for state 1.
+  \item \texttt{ccodecow2}: Country code for state 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{regimetype1}: Regime type.
+  \item \texttt{majpow1}: State 1 major power.
+  \item \texttt{majpow2}: State 2 major power.
+  \item \texttt{contig}: Contiguity.
+  \item \texttt{s\_wt\_glo}: Alliance portfolio similarity.
+  \item \texttt{s\_ld\_1}: Status quo evaluation initiator.
+  \item \texttt{s\_ld\_2}: Status quo evaluation target.
+  \item \texttt{cwhost2}: Militarized interstate dispute onset.
+  \item \texttt{cap\_1}: Capability of state 1.
+  \item \texttt{cap\_2}: Capability of state 2. 
+  \item \texttt{alliance}: Alliance.
+  \item \texttt{cwrevt11}: Civil war 
+  \item \texttt{cwnumst1}: Number of disputes in state 1.
+  \item \texttt{cwnumst2}: Number of disputes in state 2.
+  \item \texttt{abbrev1}: Country abbreviation.
+\end{itemize}
+
+
+\subsection{data-weeks-2012.csv}
+
+Replication data for \citet{Weeks:2012be}.
+Obtained from \citet{weeks2012data}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{mzinit}: Militarized dispute onset.
+  \item \texttt{machinejlw\_1}: Initiator is machine.
+  \item \texttt{juntajlw\_1}: Initiator is junta.
+  \item \texttt{bossjlw\_1}: Initiator is boss.
+  \item \texttt{strongmanjlw\_1}: Initiator is strongman.
+  \item \texttt{allotherauts\_1}: Initiator is other nondemocracies.
+  \item \texttt{newregime\_1}: Initiator is new/unstable regime.
+  \item \texttt{democracy\_1}: Initiator democracy.
+  \item \texttt{democracy\_2}: Target democracy.
+  \item \texttt{cap\_1}: Capabilities of state 1.
+  \item \texttt{cap\_2}: Capabilities of state 2. 
+  \item \texttt{initshare}: State 1's proportion of dyadic capabilities.
+  \item \texttt{dependlow}: Lower trade dependence in dyad.
+  \item \texttt{majmaj}: Initiator major power, target major power.
+  \item \texttt{minmaj}: Initiator minor power, target major power.
+  \item \texttt{majmin}: Initiator major power, target minor power.
+  \item \texttt{contigdum}: Contiguity.
+  \item \texttt{logdist}: Logged distance between capitals.
+  \item \texttt{s\_wt\_glo}: Alliance portfolio similarity.
+  \item \texttt{s\_lead\_1}: Status quo evaluation initiator.
+  \item \texttt{s\_lead\_2}: Status quo evaluation target.
+  \item \texttt{pcyrsmzinit}: Peace years linear.
+  \item \texttt{pcyrsmzinits1}: Peace years spline 1.
+  \item \texttt{pcyrsmzinits2}: Peace years spline 2.
+  \item \texttt{pcyrsmzinits3}: Peace years spline 3.
+\end{itemize}
+
+
+\subsection{data-zawahri-mitchell-2011.csv}
+
+Replication data for \citet{Zawahri:2011iy}.
+Obtained from \citet{zawahri2011data}.
+
+\begin{itemize}
+  \item \texttt{ccode1}: Country code for state 1.
+  \item \texttt{ccode2}: Country code for state 2.
+  \item \texttt{year}: Year of observation.
+  \item \texttt{dyadcode}: Dyad code.
+  \item \texttt{bilattreaty}: Bilateral treaty.
+  \item \texttt{percentarealow}: Percent lowest area in basin.
+  \item \texttt{waterdependlow}: Lowest water dependence.
+  \item \texttt{avgpreciplow}: Lowest average precipitation.
+  \item \texttt{lowpolity}: Lowest polity score.
+  \item \texttt{samelegal}: Same legal system.
+  \item \texttt{upstreampower}: Upstream state CINC score.
+  \item \texttt{downstreampower}: Downstream state CINC score.
+  \item \texttt{upstreamstate}: Upstream state indicator.
+\end{itemize}
+
+
+\section{YAML Metadata}
+
+Metadata about the models used for training and about the replication studies are contained in YAML format.
+These metadata were written and produced by the authors of the manuscript.
+
+\subsection{metadata-models.yml}
+
+Each observation is one of the component models of the super learner used to calculate the DOE scores.
+
+\begin{itemize}
+  \item \texttt{name}: Unique identifier.
+  \item \texttt{method}: Descriptive name for the model.
+  \item \texttt{data}: Which variables were used to train the model.
+  \item \texttt{year}: Whether a time trend is included in the model.
+\end{itemize}
+
+\subsection{metadata-replications.yml}
+
+Each observation is one of the studies reanalyzed in the replication analysis.
+
+\begin{itemize}
+  \item \texttt{name}: Unique identifier.
+  \item \texttt{author}: Last names of authors.
+  \item \texttt{year}: Year of publication.
+  \item \texttt{journal}: Journal of publication.
+  \item \texttt{citekey}: BibTeX citation key.
+  \item \texttt{repeats}: Number of repetitions used in the cross-validation analysis.
+  \item \texttt{method}: Statistical model used in the analysis (logit, probit, etc.).
+  \item \texttt{units}: Unit of observation in the analysis.
+  \item \texttt{terms\_cinc}: Which functions of CINC scores were included in the original analysis.
+  \item \texttt{terms\_doe}: Which functions of DOE scores were included in the reanalysis.
+  \item \texttt{dv}: Dependent variable in the analysis.
+  \item \texttt{null\_hypothesis}: Main substantive null hypothesis (or hypotheses) in the analysis.
+  \item \texttt{notes}: Any additional comments.
+\end{itemize}
+
+
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{apsr}
+\bibliography{doe}
+
+
+\appendix
+\section{Appendix: External Codebooks}
+
+\subsection{Militarized Interstate Disputes Data}
+
+\includepdf[pages=-]{MID-Codebook.pdf}
+
+\subsection{National Material Capabilities Data}
+
+\includepdf[pages=-]{NMC-Codebook.pdf}
+
+\end{document}
+

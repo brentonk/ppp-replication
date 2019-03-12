@@ -1,0 +1,387 @@
+################################################################################
+# Information about each replication
+#
+# Used to create table in paper and appendix entries
+################################################################################
+
+# Variable definitions
+- journal:
+    - &isq ISQ
+    - &ajps AJPS
+    - &apsr APSR
+    - &jop JOP
+    - &io IO
+    - &jcr JCR
+  method:
+    - &hetprob Heteroskedastic Probit
+    - &logit Logistic Regression
+    - &probit Probit Regression
+    - &multinom Multinomial Logistic Regression
+    - &oprobit Ordered Probit Regression
+  units:
+    - &ddyad Directed Dyads
+    - &udyad Undirected Dyads
+  terms:
+    - &cinc_a $\CINC_A$
+    - &cinc_b $\CINC_B$
+    - &cr_a $\CINC_A / (\CINC_A + \CINC_B)$
+    - &cr_diff $(\CINC_{\max} - \CINC_{\min}) / (\CINC_{\max} + \CINC_{\min})$
+    - &cr_minmax $\CINC_{\min} / \CINC_{\max}$
+    - &doe_a $p_A$
+    - &doe_b $p_B$
+    - &doe_max $p_{\max}$
+    - &doe_min $p_{\min}$
+    - &doe_parity $|p_A - p_B|$
+    - &log_cr_max $\log (\CINC_{\max} / (\CINC_{\max} + \CINC_{\min}))$
+    - &log_cr_maxmin $\log (\CINC_{\max} / \CINC_{\min})$
+    - &log_cr_minmax $\log (\CINC_{\min} / \CINC_{\max})$
+    - &log_doe_max $\log p_{\max}$
+    - &log_doe_min $\log p_{\min}$
+- name: arena-palmer-2009
+  author: Arena and Palmer
+  year: 2009
+  journal: *isq
+  citekey: "Arena:2009gk"
+  repeats: 10
+  method: *hetprob
+  which: Table 3
+  units: *ddyad
+  terms_cinc:
+    - *cinc_a
+  terms_doe:
+    - *doe_a
+    - *doe_b
+  dv: MID initiation
+  null_hypothesis:
+    - $\coef{Government} = 0$
+    - $\coef{$\Delta$ Unemployment * Government} = 0$
+    - $\coef{$\Delta$ Inflation * Government} = 0$
+    - $\coef{$\Delta$ Growth * Government} = 0$
+    - (each in both the mean and dispersion equations)
+  notes: >-
+    CINC and DOE terms are included in both the mean and dispersion equations.  Hypothesis tests use the nominal standard errors rather than the clustered standard errors reported in the paper.
+- name: bennett-2006
+  author: Bennett
+  year: 2006
+  journal: *isq
+  citekey: "Bennett:2006gp"
+  repeats: 10
+  method: *logit
+  which: Table 1, Column 1
+  units: *ddyad
+  terms_cinc:
+    - *cinc_a
+    - *cinc_b
+    - *cr_minmax
+  terms_doe:
+    - *doe_a
+    - *doe_b
+    - *doe_parity
+  dv: MID initiation
+  null_hypothesis:
+    - $\coef{Democracy-Initiator} = 0$
+    - $\coef{Democracy-Target} = 0$
+    - $\coef{Democracy-Initiator $\times$ Similarity} = 0$
+    - $\coef{Democracy-Initiator $\times$ Democracy-Target} = 0$
+    - $\coef{(Democracy-Initiator $\times$ Democracy-Target)$^2$} = 0$
+- name: dreyer-2010
+  author: Dreyer
+  year: 2010
+  journal: *isq
+  citekey: "Dreyer:2010cu"
+  repeats: 100
+  method: *logit
+  which: Table 2, Model 2
+  units: *udyad
+  terms_cinc:
+    - *log_cr_minmax
+  terms_doe:
+    - *log_doe_min
+    - *log_doe_max
+  dv: MID occurrence
+  null_hypothesis:
+    - $\coef{Rapid issue accumulation} = 0$
+    - $\coef{Gradual issue accumulation} = 0$
+- name: fordham-2008
+  author: Fordham
+  year: 2008
+  journal: *isq
+  citekey: "Fordham:2008gs"
+  repeats: 100
+  method: *probit
+  which: Table 2, third column (alliance onset with full set of controls)
+  units: *udyad
+  terms_cinc:
+    - $\log \CINC_{\text{US}}$
+    - $\log \CINC_2$
+  terms_doe:
+    - $\log p_{\text{US}}$
+    - $\log p_2$
+  dv: Onset of alliance with U.S.
+  null_hypothesis: $\coef{Log of exports in previous year} = 0$
+- name: fuhrmann-sechser-2014
+  author: Fuhrmann and Sechser
+  year: 2014
+  journal: *ajps
+  citekey: "Fuhrmann:2014kd"
+  repeats: 100
+  method: *probit
+  which: Table 2, Model 1
+  units: *ddyad
+  terms_cinc:
+    - *cr_a
+  terms_doe:
+    - *doe_a
+    - *doe_b
+  dv: MID initiation
+  null_hypothesis: $\coef{Defense pact with nuclear power} = 0$
+- name: gartzke-2007
+  author: Gartzke
+  year: 2007
+  journal: *ajps
+  citekey: "gartzke2007"
+  repeats: 10
+  method: *logit
+  which: Table 1, Model 4
+  units: *udyad
+  terms_cinc:
+    - *log_cr_maxmin
+  terms_doe:
+    - *log_doe_min
+    - *log_doe_max
+  dv: MID onset
+  null_hypothesis:
+    - $\coef{GDPPC (Low)} = 0$
+    - $\coef{GDPPC $\times$ Contig.} = 0$
+- name: huth-2012
+  author: Huth et al.
+  year: 2012
+  journal: *isq
+  citekey: "Huth:2012gf"
+  repeats: 100
+  method: *multinom
+  which: Table 2
+  units: *ddyad
+  terms_cinc:
+    - "Average of $A$'s respective shares of total dyadic military personnel, military expenditures, and military expenditures per soldier"
+  terms_doe:
+    - *doe_a
+    - *doe_b
+  dv: Decision to challenge the status quo (keep status quo, negotiate, or threaten force)
+  null_hypothesis: >-
+    $\coef{Strong legal claims} = 0$ in both the "Negotiations vs.\ threaten force" and "Status quo vs.\ force" equations
+- name: jung-2014
+  author: Jung
+  year: 2014
+  journal: *isq
+  citekey: "Jung:2014jq"
+  repeats: 10
+  method: *logit
+  which: Table 1, Model 2
+  units: *ddyad
+  terms_cinc:
+    - *cr_a
+  terms_doe:
+    - *doe_a
+    - *doe_b
+  dv: MID initiation (threat to use force or greater)
+  null_hypothesis:
+    - $\coef{Unrest} = 0$
+    - $\coef{Unrest $\times$ power$_{cinc}$} = 0$
+  notes: >-
+    In the DOE replication, power$_{cinc}$ is replaced with a measure constructed analogously from DOE scores.  It equals 1 for observations whose value of $(p_{B,t-1} - p_{B,t-5}) - (p_{A,t-1} - p_{A,t-5})$ is in the top quartile and 0 for all others.
+- name: morrow-2007
+  author: Morrow
+  year: 2007
+  journal: *apsr
+  citekey: "morrow2007"
+  repeats: 100
+  method: *oprobit
+  which: Table 1, first column (no weighting for data quality)
+  units: *ddyad
+  terms_cinc:
+    - *cr_a
+    - interaction with joint ratification and whether the violator lost
+  terms_doe:
+    - *doe_a
+    - *doe_b
+    - interactions of each with joint ratification and whether the violator lost
+  notes: >-
+    Capability ratio is ``corrected for distance to the battlefield and aggregated across actors with a unified command.''  We drop the cases with coalitional actors in both models, hence the difference in sample size from the original article.  No distance correction is applied to the DOE scores.
+  dv: "Noncompliance with the laws of war (ordered: full compliance, high compliance, low compliance, noncompliance)"
+  null_hypothesis:
+    - $\coef{Victim's Noncompliance} = 0$
+    - $\coef{Clarity of Victim's Violations $\times$ Victim's Noncompliance} = 0$
+    - $\coef{Joint Ratification $\times$ Victim's Noncompliance} = 0$
+    - $\coef{Clarity of Victim's Violations $\times$ Joint Ratification $\times$ Victim's Noncompliance} = 0$
+    - $\coef{Individual Violations $\times$ Victim's Noncompliance} = 0$
+    - $\coef{State Violations $\times$ Victim's Noncompliance} = 0$
+- name: owsiak-2012
+  author: Owsiak
+  year: 2012
+  journal: *isq
+  citekey: "Owsiak:2012dx"
+  repeats: 100
+  method: *logit
+  which: Table 3, Model 3
+  units: *udyad
+  terms_cinc:
+    - *log_cr_minmax
+  terms_doe:
+    - *log_doe_min
+    - *log_doe_max
+  dv: MID onset
+  null_hypothesis: $\coef{Settled Borders} = 0$
+- name: park-colaresi-2014
+  author: Park and Colaresi
+  year: 2014
+  journal: *isq
+  citekey: "Park:2014gg"
+  repeats: 10
+  method: *logit
+  which: Table 1, Model 4
+  units: *udyad
+  terms_cinc:
+    - *cr_minmax
+    - interaction with contiguity
+  terms_doe:
+    - *doe_parity
+    - interaction with contiguity
+  dv: MID onset
+  null_hypothesis: $\coef{Lowest Dem} = 0$
+- name: salehyan-2008-jop
+  author: Salehyan
+  year: 2008
+  journal: *jop
+  citekey: "salehyan2008"
+  repeats: 100
+  method: *logit
+  which: Table 1, Model 1
+  units: *udyad
+  terms_cinc:
+    - *log_cr_max
+  terms_doe:
+    - *log_doe_min
+    - *log_doe_max
+  dv: MID occurrence (category 4 or 5)
+  null_hypothesis: $\coef{External Base} = 0$
+- name: salehyan-2008-ajps
+  author: Salehyan
+  year: 2008
+  journal: *ajps
+  citekey: "Salehyan:2008es"
+  repeats: 100
+  method: *probit
+  which: Table 1, Model 1
+  units: *ddyad
+  terms_cinc:
+    - *cr_a
+  terms_doe:
+    - *doe_a
+    - *doe_b
+  dv: MID initiation
+  null_hypothesis:
+    - $\coef{Refugee Stock IN Initiator} = 0$
+    - $\coef{Refugee Stock FROM Initiator} = 0$
+- name: sobek-abouharb-ingram-2006
+  author: Sobek et al.
+  year: 2006
+  journal: *jop
+  citekey: "Sobek:2006cn"
+  repeats: 10
+  method: *logit
+  which: Table 2, Index Model
+  units: *udyad
+  terms_cinc:
+    - *cr_diff
+  terms_doe:
+    - *doe_min
+    - *doe_max
+  dv: MID onset
+  null_hypothesis:
+    - $\coef{Physical Integrity Index} = 0$
+    - $\coef{Empowerment Rights Index} = 0$
+- name: uzonyi-souva-golder-2012
+  author: Uzonyi et al.
+  year: 2012
+  journal: *isq
+  citekey: "Uzonyi:2012im"
+  repeats: 100
+  method: *logit
+  which: Table 3, Model 3
+  units: *ddyad
+  terms_cinc:
+    - *cr_a
+  terms_doe:
+    - *doe_a
+    - *doe_b
+  dv: MID reciprocation
+  null_hypothesis: $\coef{ACC State A} = 0$
+- name: weeks-2008
+  author: Weeks
+  year: 2008
+  journal: *io
+  citekey: "Weeks:2008cj"
+  repeats: 100
+  method: *logit
+  which: Table 4, Model 2
+  units: *ddyad
+  terms_cinc:
+    - *cr_a
+  terms_doe:
+    - *doe_a
+    - *doe_b
+  dv: MID reciprocation
+  null_hypothesis:
+    - $\coef{Single-Party} = \coef{Personalist}$
+    - $\coef{Military} = \coef{Personalist}$
+    - $\coef{Hybrid} = \coef{Personalist}$
+    - $\coef{Mixed Nondemocracy} = \coef{Personalist}$
+    - $\coef{Dynastic Monarchy} = \coef{Personalist}$
+    - $\coef{Nondynastic Monarchy} = \coef{Personalist}$
+    - $\coef{Nondemocratic Interregna} = \coef{Personalist}$
+    - $\coef{New Democracy} = \coef{Personalist}$
+- name: weeks-2012
+  author: Weeks
+  year: 2012
+  journal: *apsr
+  citekey: "Weeks:2012be"
+  repeats: 10
+  method: *logit
+  which: Table 1, Model 2
+  units: *ddyad
+  terms_cinc:
+    - *cinc_a
+    - *cinc_b
+    - *cr_a
+  terms_doe:
+    - *doe_a
+    - *doe_b
+  dv: MID initiation
+  null_hypothesis:
+    - $\coef{Junta} = \coef{Machine}$
+    - $\coef{Boss} = \coef{Machine}$
+    - $\coef{Strongman} = \coef{Machine}$
+    - $\coef{Other Nondemocracies} = \coef{Machine}$
+- name: zawahri-mitchell
+  author: Zawahri and Mitchell
+  year: 2011
+  journal: *isq
+  citekey: "Zawahri:2011iy"
+  repeats: 100
+  method: *logit
+  which: Table 2, Model 1
+  units: *ddyad
+  terms_cinc:
+    - *cinc_a
+    - *cinc_b
+  terms_doe:
+    - *doe_a
+    - *doe_b
+  dv: River treaty formation
+  null_hypothesis:
+    - $\coef{\% Lowest area in basin} = 0$
+    - $\coef{Lowest water dependence} = 0$
+    - $\coef{Lowest avg.\ precipitation} = 0$
+  notes: >-
+    Dyads are directed, but $A$ is the upstream state in a river basin rather than the (prospective) initiator of conflict, so we use the undirected form of the DOE scores.

@@ -1,0 +1,151 @@
+################################################################################
+# Information about each ML model, merged with results to make informative
+# tables
+################################################################################
+
+---
+!main
+- name: "null"
+  method: Null Model
+  data: Intercept Only
+  year: false
+- name: polr_capratio
+  method: &polr Ordered Logit
+  data: Capability Ratio
+  year: false
+- name: polr_time_trend
+  method: *polr
+  data: Time Trend
+  year: true
+- name: polr
+  method: *polr
+  data: &comps Components
+  year: false
+- name: polr_t
+  method: *polr
+  data: *comps
+  year: true
+- name: polr_props
+  method: *polr
+  data: &props Proportions
+  year: false
+- name: polr_props_t
+  method: *polr
+  data: *props
+  year: true
+- name: c5
+  method: &c5 C5.0
+  data: *comps
+  year: false
+- name: c5_t
+  method: *c5
+  data: *comps
+  year: true
+- name: c5_props
+  method: *c5
+  data: *props
+  year: false
+- name: c5_props_t
+  method: *c5
+  data: *props
+  year: true
+- name: svm
+  method: &svm Support Vector Machine
+  data: *comps
+  year: false
+- name: svm_t
+  method: *svm
+  data: *comps
+  year: true
+- name: svm_props
+  method: *svm
+  data: *props
+  year: false
+- name: svm_props_t
+  method: *svm
+  data: *props
+  year: true
+- name: knn
+  method: &knn $k$-Nearest Neighbors
+  data: *comps
+  year: false
+- name: knn_t
+  method: *knn
+  data: *comps
+  year: true
+- name: knn_props
+  method: *knn
+  data: *props
+  year: false
+- name: knn_props_t
+  method: *knn
+  data: *props
+  year: true
+- name: nb
+  method: &nb Naive Bayes
+  data: *comps
+  year: false
+- name: nb_t
+  method: *nb
+  data: *comps
+  year: true
+- name: nb_props
+  method: *nb
+  data: *props
+  year: false
+- name: nb_props_t
+  method: *nb
+  data: *props
+  year: true
+- name: cart
+  method: &cart CART
+  data: *comps
+  year: false
+- name: cart_t
+  method: *cart
+  data: *comps
+  year: true
+- name: cart_props
+  method: *cart
+  data: *props
+  year: false
+- name: cart_props_t
+  method: *cart
+  data: *props
+  year: true
+- name: rf
+  method: &rf Random Forests
+  data: *comps
+  year: false
+- name: rf_t
+  method: *rf
+  data: *comps
+  year: true
+- name: rf_props
+  method: *rf
+  data: *props
+  year: false
+- name: rf_props_t
+  method: *rf
+  data: *props
+  year: true
+- name: avnnet
+  method: &avnnet Averaged Neural Nets
+  data: *comps
+  year: false
+- name: avnnet_t
+  method: *avnnet
+  data: *comps
+  year: true
+- name: avnnet_props
+  method: *avnnet
+  data: *props
+  year: false
+- name: avnnet_props_t
+  method: *avnnet
+  data: *props
+  year: true
+- name: ensemble
+  method: Super Learner
+  data: .na
+  year: .na

@@ -1,0 +1,37 @@
+# Codebooks
+MID-Codebook.pdf
+NMC-Codebook.pdf
+
+# Data files
+data-*.csv
+data-*.dta
+
+# Directory stuff
+.bash_history
+.dockerignore
+.dropbox
+
+# LaTeX junk
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+
+# LaTeX/pandoc output
+codebook.pdf
+README.pdf
+README.txt
+
+# R output
+predict-*.csv
+
+# Singularity image
+pppr.simg
+
+# Subdirectories
+/ajps/
+/results/
