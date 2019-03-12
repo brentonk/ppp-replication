@@ -20,7 +20,7 @@ RUN mkdir -p ${base} ${base}/results \
     # To mirror ACCRE filesystem
     /scratch /data /gpfs21 /gpfs22 /gpfs23 \
     # LaTeX packages needed for tikzDevice
-    && tlmgr install --force pgf xcolor preview
+    && tlmgr install -repository ctan --force pgf xcolor preview
 
 ENV HOME=${base}
 
