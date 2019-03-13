@@ -18,8 +18,7 @@ doe_dir_dyad <- read.csv("results/predict-dir-dyad.csv")
 
 ## drop droppables
 keeper <- data_usg_2012$year > 1945 &
-    data_usg_2012$year <= 2000 &
-    data_usg_2012$originator == 1
+    data_usg_2012$year <= 2000
 data_usg_2012 <- data_usg_2012[keeper,]
 rm(keeper)
 
