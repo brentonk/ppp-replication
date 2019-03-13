@@ -127,8 +127,7 @@ data_huth_2012 <- raw_huth_2012 %>%
                labels = c("Force",
                           "Negotiate",
                           "SQ")
-           )) %>%
-    filter(begmopog == 1)
+           ))
 
 ## Convert date variable to year
 ##
