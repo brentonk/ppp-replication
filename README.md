@@ -3,23 +3,99 @@
 Article by Robert J. Carroll and Brenton Kenkel.  Corresponding author for replication materials: Brenton Kenkel (<brenton.kenkel@gmail.com>).  We thank James Martherus for help assembling the replication materials.
 
 
-## Overview of Files
+## List of Files
 
-Specific descriptions of R scripts appear in the last section of this file.
+Full descriptions of R scripts and their output appear in the last section of this file.
 
 * `_all.sh`: Bash script containing instructions for running the full analysis.
 
 * `[###]-[description].r`: R scripts used to run the analysis.  Numbered in the order that they should be run.
+    * `000-install.r`: Create required subdirectories and optionally install packages.
+    * `100-nmc.r`: Clean and impute material capabilities data.
+    * `101-mid.r`: Merge material capabilities data into dispute data.
+    * `102-outcomes-time.r`: Plot distribution of outcomes over time.
+    * `103-train-models.r`: Train candidate models for the super learner.
+    * `104-train-weights.r`: Cross validation for super learner weights.
+    * `105-collect-weights.r`: Collect super learner weights.
+    * `106-summarize-weights.r`: Summarize super learner training.
+    * `107-capratio.r`: Ordered logit of dispute outcomes on capability ratio.
+    * `108-dir-dyad-year.r`: Make dataset of directed dyad-years.
+    * `109-predict.r`: Compute super learner predictions.
+    * `110-collect-predict.r`: Collect super learner predictions.
+    * `111-doe-vs-cinc.r`: Compare DOE scores to capability ratio.
+    * `112-varimp.r`: Variable importance estimation.
+    * `113-collect-varimp.r`: Collect results of variable importance estimation.
+    * `114-summarize-varimp.r`: Summarize results of variable importance estimation.
+    * `200-reed-run-and-plot.r`: Main models in replication of Reed et al. (2008).
+    * `201-reed-cv-and-table.r`: Cross-validation of Reed et al. (2008) replication analysis.
+    * `300-arena-palmer-2009.r`: Replication of Arena and Palmer (2009).
+    * `301-bennett-2006.r`: Replication of Bennett (2006).
+    * `302-dreyer-2010.r`: Replication of Dreyer (2010).
+    * `303-fordham-2008.r`: Replication of Fordham (2008).
+    * `304-fuhrmann-sechser-2014.r`: Replication of Fuhrmann and Sechser (2014).
+    * `305-gartzke-2007.r`: Replication of Gartzke (2007).
+    * `306-huth-2012.r`: Replication of Huth (2012).
+    * `307-jung-2014.r`: Replication of Jung (2014).
+    * `308-morrow-2007.r`: Replication of Morrow (2007).
+    * `309-owsiak-2012.r`: Replication of Owsiak (2012).
+    * `310-park-colaresi-2014.r`: Replication of Park and Colaresi (2014).
+    * `311-salehyan-2008-ajps.r`: Replication of Salehyan (2008, AJPS).
+    * `312-salehyan-2008-jop.r`: Replication of Salehyan (2008, JOP).
+    * `313-sobek-abouharb-ingram-2006.r`: Replication of Sobek, Abouharb, and Ingram (2006).
+    * `314-uzonyi-souva-golder-2012.r`: Replication of Uzonyi, Souva, and Golder (2012).
+    * `315-weeks-2008.r`: Replication of Weeks (2008).
+    * `316-weeks-2012.r`: Replication of Weeks (2012).
+    * `317-zawahri-mitchell-2011.r`: Replication of Zawahri and Mitchell (2011).
+    * `400-collect-replications.r`: Collect replication results.
+    * `401-describe-replications.r`: Print basic information about each replication for online appendix.
+
+* `[###]-[description].slurm`: Sample SLURM submission scripts for running key portions of the analysis in parallel.
+    * `104-train-weights.slurm`: Cross validation for super learner weights.
+    * `109-predict.slurm`: Compute super learner predictions.
+    * `112-varimp.slurm`: Variable importance estimation.
+    * `3XX-replications.slurm`: Replication analyses.
 
 * `codebook.pdf`: PDF containing descriptions for the DOE score data files, all data used to construct DOE scores, all data used in the replication analyses, and metadata required to run our R scripts.
 
 * `data-[description].csv` and `data-[description].dta`: Data files in CSV or Stata format used in the analysis.
+    * `data-arena-palmer-2009.csv`: Replication data for Arena and Palmer (2009).
+    * `data-bennett-2006.csv`: Replication data for Bennett (2006).
+    * `data-dreyer-2010.csv`: Replication data for Dreyer (2010).
+    * `data-fordham-2008.csv`: Replication data for Fordham (2008).
+    * `data-fuhrmann-sechser-2014.csv`: Replication data for Fuhrmann and Sechser (2014).
+    * `data-gartzke-2007.csv`: Replication data for Gartzke (2007).
+    * `data-huth-2012.csv`: Replication data for Huth (2012).
+    * `data-idealpoint4600.dta`: Ideal point replication data for Reed et al. (2008).
+    * `data-jung-2014.csv`: Replication data for Jung (2014).
+    * `data-mida-4.01.csv`: Militarized Interstate Disputes data, dispute-level.
+    * `data-midb-4.01.csv`: Militarized Interstate Disputes data, participant-level.
+    * `data-morrow-2007.csv`: Replication data for Morrow (2007).
+    * `data-nmc-4.0.csv`: National Material Capabilities data.
+    * `data-owsiak-2012.csv`: Replication data for Owsiak (2012).
+    * `data-park-colaresi-2014.csv`: Replication data for Park and Colaresi (2014).
+    * `data-reed-et-al-2008.dta`: Replication data for Reed et al. (2008).
+    * `data-salehyan-2008-ajps.csv`: Replication data for Salehyan (2008, AJPS).
+    * `data-salehyan-2008-jop.csv`: Replication data for Salehyan (2008, JOP).
+    * `data-sobek-abouharb-ingram-2006.csv`: Replication data for Sobek, Abouharb, and Ingram (2006).
+    * `data-uzonyi-souva-golder-2012.csv`: Replication data for Uzonyi, Souva, and Golder (2012).
+    * `data-weeks-2008.csv`: Replication data for Weeks (2008).
+    * `data-weeks-2012.csv`: Replication data for Weeks (2012).
+    * `data-zawahri-mitchell-2011.csv`: Replication data for Zawahri and Mitchell (2011).
 
 * `Dockerfile`: Recipe for Docker image for replication of the full computing environment.
 
 * `fn-[description].r`: R scripts containing helper functions.  These are called by other scripts and should not be run on their own.
+    * `fn-collect.r`: Helper functions for collecting replication study results.
+    * `fn-defs-train.r`: Specification for super learner candidate models.
+    * `fn-glm-and-cv.r`: Helper functions for cross-validation in replications.
+    * `fn-merge-nmc-dyad.r`: Helper functions for data merging.
+    * `fn-predict-from-ensemble.r`: Helper functions for calculating predicted values.
+    * `fn-train.r`: Helper functions for model training.
+    * `fn-varimp.r`: Helper functions for variable importance.
 
 * `metadata-[description].yml`: Metadata files in YAML format describing components of the analysis.
+    * `metadata-models.yml`: Machine learning models used in super learner.
+    * `metadata-replications.yml`: Articles replicated in the replication analysis.
 
 * `predict-dyad.csv` and `predict-dir-dyad.csv`: Data files in CSV containing the Dispute Outcome Expectations scores constructed in the course of the analysis.
 
@@ -141,7 +217,7 @@ Linux users without root access may need to use `sudo docker ...` instead.
         ...
         Rscript 104-train-weights.r 10
 
-    These can be run in parallel on a cluster.  Output stored in `results/weights`.
+    These can be run in parallel on a cluster.  See the example SLURM submission script, `104-train-weights.slurm`.  Output stored in `results/weights`.
 
 6.  `105-collect-weights.r`: Collect results from the previous step.  Output:
 
@@ -168,7 +244,7 @@ Linux users without root access may need to use `sudo docker ...` instead.
         ...
         Rscript 109-predict.r 2007
 
-    These can be run in parallel on a cluster.  Output stored in `results/predict`.
+    These can be run in parallel on a cluster.  See the example SLURM submission script, `109-predict.slurm`.  Output stored in `results/predict`.
 
 11. `110-collect-predict.r`: Collect predicted probabilities across years into unified files: the DOE scores.  Output:
 
@@ -187,7 +263,7 @@ Linux users without root access may need to use `sudo docker ...` instead.
         ...
         Rscript 112-varimp.r 179
 
-    These can be run in parallel on a cluster.  Output stored in `results/varimp`.
+    These can be run in parallel on a cluster.  See the example SLURM submission script, `112-varimp.slurm`.  Output stored in `results/varimp`.
 
 14. `113-collect-varimp.r`: Collect results of variable importance analysis into a single file.  Output:
 
@@ -230,7 +306,7 @@ Linux users without root access may need to use `sudo docker ...` instead.
     *   `316-weeks-2012.r`
     *   `317-zawahri-mitchell-2011.r`
 
-    Each of these can be run simultaneously, in parallel on a cluster.  Output of each containing model fit and cross-validation results stored in `results/replications`.
+    Each of these can be run simultaneously, in parallel on a cluster.  See the example SLURM submission script, `3XX-replications.slurm`.  Output of each containing model fit and cross-validation results stored in `results/replications`.
 
 4.  `400-collect-replications.r`: Collect replication results into a single file.  Output:
 
