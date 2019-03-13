@@ -47,12 +47,12 @@ The DOE scores are calculated using two datasets from the Correlates of War proj
 
 The file \texttt{data-mida-4.01.csv} contains the dispute-level Militarized Interstate Disputes data.
 The file \texttt{data-midb-4.01.csv} contains the dispute-participant--level data.
-Their codebook is appended to the end of this document.
+The codebook for both files is available as part of the data archive \citep{mid_data}.
 
 \subsection{data-nmc-4.0.csv}
 
 The file \texttt{data-nmc-4.0.csv} contains the National Material Capabilities data.
-Its codebook is appended to the end of this document.
+The codebook for this file is available alongside the data archive \citep{nmc_data}.
 
 
 \section{Replication of Reed et al.\ (2008)}
@@ -68,13 +68,13 @@ This file contains the main replication data for Reed et al.'s analysis.
   \item \texttt{ccode1}: Country code for State 1.
   \item \texttt{ccode2}: Country code for State 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{cwmid}: Indicator for militarized interstate dispute.
-  \item \texttt{alliance}: Indicator for if the states share a defense pact, neutrality agreement, or entente pact.
+  \item \texttt{cwmid}: Indicator for militarized interstate dispute (1 = dispute, 0 = no dispute).
+  \item \texttt{alliance}: Indicator for if the states share a defense pact, neutrality agreement, or entente pact (1 = agreement, 0 = no agreement).
   \item \texttt{demlow}: Lower of the states' Polity IV scores.
   \item \texttt{logdist}: Natural logarithm of the distance between state capitals.
   \item \texttt{peaceyrs}: Years since last dispute between the states.
   \item \texttt{\_spline1}, \texttt{\_spline2}, \texttt{\_spline3}: Cubic spline basis for years since last dispute.
-  \item \texttt{twomaj}: Indicator for both states being major powers.
+  \item \texttt{twomaj}: Indicator for both states being major powers (1 = both majors, 0 = not both majors).
   \item \texttt{zqpo\_1}: Absolute difference between status quo (ordinal scale measure) and balance of power.
   \item \texttt{zqpo2\_1}: Squared difference between status quo (ordinal scale measure) and balance of power.
   \item \texttt{zqpb\_1}: Absolute difference between status quo (binary scale measure) and balance of power.
@@ -114,7 +114,7 @@ Obtained from \citet{arena2009data}.
   \item \texttt{ccode1}: Country code for State 1.
   \item \texttt{ccode2}: Country code for State 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{init}: Indicator for dispute initiation.
+  \item \texttt{init}: Indicator for dispute initiation (1 = initiation, 0 = no initiation).
   \item \texttt{gov}: Government's position along the left-right ideological spectrum. 
   \item \texttt{d\_un}: Change in unemployment.
   \item \texttt{di\_nf}: Change in inflation.
@@ -163,19 +163,19 @@ Obtained from \citet{dreyer2010data}.
   \item \texttt{ccode1}: Country code for state 1.
   \item \texttt{ccode2}: Country code for state 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{mid}: Militarized interstate dispute.
-  \item \texttt{rap\_iss\_accum}: Rapid issue accumulation.
-  \item \texttt{grad\_iss\_accum}: Gradual issue accumulation.
+  \item \texttt{mid}: Indicator for militarized interstate dispute (1 = dispute, 0 = no dispute).
+  \item \texttt{rap\_iss\_accum}: Count of rapid issue accumulation.
+  \item \texttt{grad\_iss\_accum}: Count of gradual issue accumulation.
   \item \texttt{cap\_rat}: Capability ratio.
-  \item \texttt{maj\_power}: Major power.
-  \item \texttt{alliance}: Alliance.
-  \item \texttt{democ}: Democracy.
-  \item \texttt{contig}: Contiguity.
+  \item \texttt{maj\_power}: Indicator for both states being major powers (1 = both majors, 0 = not both majors).
+  \item \texttt{alliance}: Indicator for formal military alliance between states (1 = alliance, 0 = no alliance).
+  \item \texttt{democ}: Indicator for democracy (1 = either country democratic, 0 = neither country democratic).
+  \item \texttt{contig}: Indicator for contiguity (1 = contiguous dyad, 0 = not contiguous).
   \item \texttt{spline\_1}: Spline 1.
   \item \texttt{spline\_2}: Spline 2.
   \item \texttt{spline\_3}: Spline 3.
   \item \texttt{spline\_4}: Spline 4. 
-  \item \texttt{rivdyad}: Rivalry dyad.
+  \item \texttt{rivdyad}: Indicator for rivalry (1 = rivalry, 0 = no rivalry).
 \end{itemize}
 
 \subsection{data-fordham-2008.csv}
@@ -186,18 +186,18 @@ Obtained from \citet{fordham2008data}.
 \begin{itemize}
   \item \texttt{ccode}: Country code.
   \item \texttt{year}: Year of observation.
-  \item \texttt{atopdo}: Alliance onset.
+  \item \texttt{atopdo}: Indicator for alliance onset (1 = new alliance, 0 = none).
   \item \texttt{lnexports1}: Log of exports in previous year.
-  \item \texttt{lndistance}: Log of capital to capital distance from United States
+  \item \texttt{lndistance}: Log of capital to capital distance from United States.
   \item \texttt{lntotmids10\_1}:  Log of MIDs in which the United States was involved in the preceding 10 years.
   \item \texttt{lntotmids10\_2}: Log of MIDs in which other dyad member was involved in the preceding 10 years.
   \item \texttt{lndyadmid10}: Log of MIDs between United States and other dyad member in the preceding 10 years.
   \item \texttt{"lncap\_1}: Log of COW capabilities index for United States.
   \item \texttt{"lncap\_2}: Log of COW capabilities index for other dyad member.
   \item \texttt{polity22}: Polity score for other dyad member.
-  \item \texttt{coldwar}: Cold war era (1946-1989)
-  \item \texttt{noallyrs}: Previous alliance onsets.
-  \item \texttt{\_prefail}: Previous alliance collapses.
+  \item \texttt{coldwar}: Indicator for Cold War era, 1946--1989 (1 = during Cold War, 0 = not).
+  \item \texttt{noallyrs}: Count of previous alliance onsets.
+  \item \texttt{\_prefail}: Count of previous alliance collapses.
   \item \texttt{\_spline1}: Spline 1.
   \item \texttt{\_spline2}: Spline 2.
   \item \texttt{\_spline3}: Spline 3.
@@ -212,24 +212,24 @@ Obtained from \citet{fuhrmann2014data}.
   \item \texttt{state\_a}: Country code for state 1.
   \item \texttt{state\_b}: Country code for state 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{military\_conflict}: Military conflict.
-  \item \texttt{defense\_pact\_nuclear\_cow}: Defense pact with nuclear power.
-  \item \texttt{nuclear\_deployment}: Nuclear deployment.
-  \item \texttt{defense\_pact\_nonnuclear\_cow}: Defense pact with nonnuclear power.
-  \item \texttt{us\_troops}: U.S. troops.
-  \item \texttt{challenger\_nuclear\_weapons}: Nuclear challenger.
-  \item \texttt{target\_nuclear\_weapons}: Nuclear target.
-  \item \texttt{contiguity}: Contiguity.
-  \item \texttt{alliance\_with\_challenger\_cow}: Alliance with challenger.
+  \item \texttt{military\_conflict}: Indicator for militarized interstate dispute initiation (1 = dispute initiation, 0 = none).
+  \item \texttt{defense\_pact\_nuclear\_cow}: Indicator for state 2 having defense pact with nuclear power (1 = pact, 0 = no pact).
+  \item \texttt{nuclear\_deployment}: Indicator for state 2 having a  nuclear deployment (1 = had foreign-deployed nuclear weapons, 0 = did not).
+  \item \texttt{defense\_pact\_nonnuclear\_cow}: Indicator for state 2 having a defense pact with nonnuclear power (1 = pact, 0 = no pact).
+  \item \texttt{us\_troops}: Number of US troops stationed in state 2.
+  \item \texttt{challenger\_nuclear\_weapons}: Indicator for state 1 being a nuclear power (1 = nuclear, 0 = not).
+  \item \texttt{target\_nuclear\_weapons}: Indicator for state 2 being a nuclear power (1 = nuclear, 0 = not).
+  \item \texttt{contiguity}: Indicator for contiguity (1 = contiguous, 0 = not).
+  \item \texttt{alliance\_with\_challenger\_cow}: Indicator for alliance in the dyad (1 = alliance, 0 = not).
   \item \texttt{foreign\_policy\_similarity}: Foreign policy similarity.
   \item \texttt{power\_ratio}: Power ratio.
-  \item \texttt{challenger\_polity}: Challenger polity.
-  \item \texttt{target\_polity}: Target polity.
+  \item \texttt{challenger\_polity}: State 1 Polity score.
+  \item \texttt{target\_polity}: State 2 Polity score.
   \item \texttt{polity\_interaction}: Interaction between \texttt{target\_polity} and \texttt{challenger\_polity}
   \item \texttt{time\_conflict}: Time.
   \item \texttt{time\_conflict2}: Time squared.
   \item \texttt{time\_conflict3}: Time cubed.
-  \item \texttt{politically\_relevant}: Politically relevant.
+  \item \texttt{politically\_relevant}: Indicator for political relevance (1 = politically relevant, 0 = not).
 \end{itemize}
 
 \subsection{data-gartzke-2007.csv}
@@ -241,24 +241,24 @@ Obtained from \citet{gartzke2007data}.
   \item \texttt{statea}: COW country code for State A.
   \item \texttt{stateb}: COW country code for State B.
   \item \texttt{year}: Year of observation.
-  \item \texttt{maoznewl}: Indicator for Militarized Interstate Dispute occurrence.
+  \item \texttt{maoznewl}: Indicator for Militarized Interstate Dispute occurrence (1 = dispute, 0 = not).
   \item \texttt{demlo}: Lowest Polity IV score in the dyad, scaled to 0--10.
   \item \texttt{demhi}: Highest Polity IV score in the dyad, scaled to 0--10.
   \item \texttt{deplo}: Lowest IMF index of economic openness in the dyad.
   \item \texttt{capopenl}: Lowest score of trade openness in the dyad.
   \item \texttt{rgdppclo}: Lowest GDP per capita in the dyad.
-  \item \texttt{contig}: Indicator for whether the dyad is contiguous.
+  \item \texttt{contig}: Indicator for whether the dyad is contiguous (1 = contiguous, 0 = not).
   \item \texttt{gdpcontg}: Interaction of \texttt{rgdppclo} and \texttt{contig}.
   \item \texttt{logdstab}: Natural logarithm of great circle distance between the dyad's capitals.
-  \item \texttt{majpdyds}: Indicator for if either state in the dyad is a major power.
+  \item \texttt{majpdyds}: Indicator for if either state in the dyad is a major power (1 = major power present, 0 = none).
   \item \texttt{alliesr}: Indicator for the presence of a defense pact, neutrality pact, or entente in the dyad.  
   \item \texttt{lncaprt}: Natural logarithm of capability ratio.
-  \item \texttt{namerica}: Indicator for both states being in North America.
-  \item \texttt{samerica}: Indicator for both states being in South America.
-  \item \texttt{europe}: Indicator for both states being in Europe.
-  \item \texttt{africa}: Indicator for both states being in Sub-Saharan Africa.
-  \item \texttt{nafmeast}: Indicator for both states being in North Africa or the Middle East.
-  \item \texttt{asia}: Indicator for both states being in Asia.
+  \item \texttt{namerica}: Indicator for both states being in North America (1 = yes, 0 = no).
+  \item \texttt{samerica}: Indicator for both states being in South America (1 = yes, 0 = no).
+  \item \texttt{europe}: Indicator for both states being in Europe (1 = yes, 0 = no).
+  \item \texttt{africa}: Indicator for both states being in Sub-Saharan Africa (1 = yes, 0 = no).
+  \item \texttt{nafmeast}: Indicator for both states being in North Africa or the Middle East (1 = yes, 0 = no).
+  \item \texttt{asia}: Indicator for both states being in Asia (1 = yes, 0 = no).
   \item \texttt{\_spline1}, \texttt{\_spline2}, \texttt{\_spline3}: Cubic spline basis for years since last dyadic dispute.
 \end{itemize}
 
@@ -270,17 +270,16 @@ Obtained from \citet{huth2012data}.
 \begin{itemize}
   \item \texttt{cowcntry}: Country code for state 1.
   \item \texttt{opponent}: Country code for state 2.
-  \item \texttt{dvsqb}: Decision to challenge the status quo.
-  \item \texttt{slc3b}: Strong legal claims.
-  \item \texttt{demdum}: Democracy indicator.
-  \item \texttt{milratio}: Military balance.
-  \item \texttt{alliance}: Alliance.
-  \item \texttt{strvalue}: Military strength.
-  \item \texttt{ethvalue1}: Ethnic ties.
-  \item \texttt{endriv5b}: Enduring rivalry.
+  \item \texttt{dvsqb}: Categorical variable for decision to challenge the status quo (0 = no challenge, 1 = negotiations, 2 = use of force).
+  \item \texttt{slc3b}: Indicator for state 1 having stronger legal claims to the territory under dispute (1 = yes, 0 = no).
+  \item \texttt{demdum}: Indicator for state 1 democratic (1 = democratic, 0 = not democratic).
+  \item \texttt{milratio}: Capability ratio.
+  \item \texttt{alliance}: Indicator for presence of an alliance (1 = alliance, 0 = no alliance).
+  \item \texttt{strvalue}: Indicator for strategically valuable territory (1 = strategically valuable, 0 = not).
+  \item \texttt{ethvalue1}: Indicator for state 1 having ethnic ties with a population in the disputed territory (1 = ties, 0 = no ties).
+  \item \texttt{endriv5b}: Indicator for an enduring rivalry (1 = rivalry, 0 = no rivalry).
   \item \texttt{sqtime1}: Number of months to event of interest.
-  \item \texttt{begmopog}: 
-  \item \texttt{date}: Date.
+  \item \texttt{date}: Months since 1960.
   \item \texttt{dispno2}: Unique identifier for each separate territorial dispute.
 \end{itemize}
 
@@ -293,20 +292,20 @@ Obtained from \citet{jung2014data}.
   \item \texttt{ccode1}: Country code for state 1.
   \item \texttt{ccode2}: Country code for state 2. 
   \item \texttt{year}: Year of observation.
-  \item \texttt{dyadid}: Dyad id.
-  \item \texttt{initiate}: Initiation of interstate conflict
-  \item \texttt{dom}: Domestic unrest.
-  \item \texttt{powtg\_cinc}: Power ratio.
-  \item \texttt{identg}: Identity target.
-  \item \texttt{tertg}: Territory target. 
-  \item \texttt{hegtg}: Hegemony target.
-  \item \texttt{caprat\_1}: Relative power.
-  \item \texttt{cowally\_1}: Ally.
+  \item \texttt{dyadid}: Dyad identifier.
+  \item \texttt{initiate}: Indicator for initiation of interstate conflict (1 = initiation, 0 = no initiation).
+  \item \texttt{dom}: Number of political unrest events.
+  \item \texttt{powtg\_cinc}: Indicator for state 2 being a rising power (1 = rising power, 0 = not).
+  \item \texttt{identg}: Indicator for different religious identities in the dyad (1 = different identities, 0 = not)
+  \item \texttt{tertg}: Indicator for territorial claim in last 5 years (1 = claim, 0 = no claim).
+  \item \texttt{hegtg}: Indicator for state 2 being a regional or local hegemon with declining power (1 = declining hegemon, 0 = not).
+  \item \texttt{caprat\_1}: Capability ratio.
+  \item \texttt{cowally\_1}: Indicator for presence of an alliance (1 = alliance, 0 = none).
   \item \texttt{depend1\_1}: Economic interdependence of state 1.
   \item \texttt{depend2\_1}: Economic interdependence of state 2.
-  \item \texttt{jointdemo\_1}: Joint democracy.
-  \item \texttt{jointminor\_1}: Joint minor power.
-  \item \texttt{border}: Border.
+  \item \texttt{jointdemo\_1}: Indicator for joint democracy (1 = both states democratic, 0 = not).
+  \item \texttt{jointminor\_1}: Indicator for both states being minor powers (1 = both minor powers, 0 = not).
+  \item \texttt{border}: Indicator for sharing a border (1 = shared border, 0 = not).
   \item \texttt{lndistance}: Natural log of distance between two capitals.
   \item \texttt{mid1peace}: Years since last dyadic conflict.
   \item \texttt{mid1sp1}: Spline 1.
@@ -321,33 +320,33 @@ Obtained from \citet{morrow2007data}.
 
 \begin{itemize}
   \sloppy
-  \item \texttt{violator\_4\_ordinal\_comply}: Violator's noncompliance.
-  \item \texttt{victim\_4\_ordinal\_comply}: Victim's noncompliance.
+  \item \texttt{violator\_4\_ordinal\_comply}: Categorical variable for violator's noncompliance with the laws of war (0 = full compliance, 1 = high compliance, 2 = low compliance, 3 = noncompliance)
+  \item \texttt{victim\_4\_ordinal\_comply}: Categorical variable for Victim's noncompliance with the laws of war (0 = full compliance, 1 = high compliance, 2 = low compliance, 3 = noncompliance).
   \item \texttt{victim\_clar\_4\_ordinal\_comply}: Clarity of victim's violations interacted with \texttt{victim\_4\_ordinal\_comply}.
   \item \texttt{joint\_ratify\_4\_ordinal\_recip}: Interaction of \texttt{joint\_ratify} and \texttt{victim\_4\_ordinal\_comply}.
-  \item \texttt{joint\_ratify\_clar\_recip}: Interaction of \texttt{joint\_ratify} and clarity of recipients violations.
-  \item \texttt{victim\_individual\_comply}: Individual violations.
-  \item \texttt{victim\_state\_comply}: State violations multiplied with victim's noncompliance.
-  \item \texttt{joint\_ratify}: Joint ratification.
-  \item \texttt{violator\_ratified}: Violator ratified.
-  \item \texttt{violator\_democracy7}: Violator democracy.
-  \item \texttt{joint\_ratify\_democracy7}: Interaction of \texttt{joint\_ratify} and texttt{violator\_democracy7}.
+  \item \texttt{joint\_ratify\_clar\_recip}: Clarity of victim's violations interacted with \texttt{joint\_ratify\_4\_ordinal\_recip}.
+  \item \texttt{victim\_individual\_comply}: Individual violations interacted with \texttt{victim\_4\_ordinal\_comply}.
+  \item \texttt{victim\_state\_comply}: State violations interacted with \texttt{victim\_4\_ordinal\_comply}.
+  \item \texttt{joint\_ratify}: Weighted proportion of pairs of warring states that have both ratified the most recent treaty in the issue area.
+  \item \texttt{violator\_ratified}: Weighted proportion of violators that have ratified the most recent treaty in the issue area.
+  \item \texttt{violator\_democracy7}: Weighted proportion of violators that are democracies.
+  \item \texttt{joint\_ratify\_democracy7}: Interaction of \texttt{joint\_ratify} and \texttt{violator\_democracy7}.
   \item \texttt{violator\_ratified\_democracy7}: Interaction of \texttt{violator\_ratified} and \texttt{violator\_democracy7}.
-  \item \texttt{powerratio}: Power ratio.
+  \item \texttt{powerratio}: Capability ratio.
   \item \texttt{joint\_ratify\_power}: Interaction of \texttt{powerratio} and \texttt{joint\_ratify}.
-  \item \texttt{Aerial}: Aerial bombing.
-  \item \texttt{Armistice}: Armistice.
-  \item \texttt{CBW}: Chemical and biological warfare.
-  \item \texttt{Civilians}: Treatment of civilians.
-  \item \texttt{Cultural}: Protection of cultural property.
-  \item \texttt{HighSeas}: Conduct on the high seas.
-  \item \texttt{POWs}: Prisoners of war.
-  \item \texttt{violator\_initiate}: Violator initiator.
+  \item \texttt{Aerial}: Indicator for whether issue area is aerial bombing (1 = yes, 0 = no).
+  \item \texttt{Armistice}: Indicator for whether issue area is armistice (1 = yes, 0 = no).
+  \item \texttt{CBW}: Indicator for whether issue area is chemical and biological warfare (1 = yes, 0 = no).
+  \item \texttt{Civilians}: Indicator for whether issue area is treatment of civilians (1 = yes, 0 = no).
+  \item \texttt{Cultural}: Indicator for whether issue area is protection of cultural property (1 = yes, 0 = no).
+  \item \texttt{HighSeas}: Indicator for whether issue area is conduct on the high seas (1 = yes, 0 = no).
+  \item \texttt{POWs}: Indicator for whether issue area is prisoners of war (1 = yes, 0 = no).
+  \item \texttt{violator\_initiate}: Indicator for whether violator is war initiator (1 = yes, 0 = no).
   \item \texttt{violator\_deathsper1000population}: Violator battle deaths per 1,000 population.
-  \item \texttt{victim\_victor}: Violator lost.
+  \item \texttt{victim\_victor}: Indicator for whether violator lost (1 = violator lost, 0 = violator did not lose).
   \item \texttt{victim\_victor\_power}: Interaction of \texttt{victim\_victor} and \texttt{powerratio}.
-  \item \texttt{data\_quality}: Quality of data.
-  \item \texttt{WarDeclaration}: Declaration of war.
+  \item \texttt{data\_quality}: Quality of data on 4-point scale.
+  \item \texttt{WarDeclaration}: Indicator for declaration of war (1 = yes, 0 = no).
   \item \texttt{violatorccode}: Violator country code.
   \item \texttt{victimccode}: Victim country code.
   \item \texttt{startyear}: Year of observation.
@@ -363,11 +362,11 @@ Obtained from \citet{owsiak2012data}.
   \item \texttt{ccode1}: Country code for state 1.
   \item \texttt{ccode2}: Country code for state 2. 
   \item \texttt{year}: Year of observation.
-  \item \texttt{midonset}: Militarized interstate dispute onset.
-  \item \texttt{settlem}: Settled borders.
-  \item \texttt{jtdem6}: Jointly democratic.
-  \item \texttt{majinvolve}: Major state involvement.
-  \item \texttt{atopally}: States are allied to each other.
+  \item \texttt{midonset}: Indicator for militarized interstate dispute onset (1 = dispute onset, 0 = none).
+  \item \texttt{settlem}: Indicator for settled borders in the dyad (1 = settled borders, 0 = not).
+  \item \texttt{jtdem6}: Indicator for whether both states are democratic (1 = yes, 0 = no).
+  \item \texttt{majinvolve}: Indicator for major power involvement (1 = major power involved, 0 = not).
+  \item \texttt{atopally}: Indicator for whether states are allied with each other (1 = yes, 0 = no).
   \item \texttt{lncincratio}: Natural log of CINC ratio.
   \item \texttt{peaceyears}: Peace years.
   \item \texttt{\_spline1}: Spline 1.
@@ -385,23 +384,23 @@ Obtained from \citet{park2014data}.
   \item \texttt{ccode1}: Country code for state 1.
   \item \texttt{ccode2}: Country code for state 2. 
   \item \texttt{year}: Year of observation.
-  \item \texttt{cwmid}: Militarized interstate dispute onset.
-  \item \texttt{lowdem}: Lowest level of democracy.
-  \item \texttt{lowgdp}: Lowest GDP. 
-  \item \texttt{landcontig}: Contiguous land.
-  \item \texttt{nlparity}: Parity
+  \item \texttt{cwmid}: Indicator for militarized interstate dispute onset (1 = dispute onset, 0 = no dispute onset).
+  \item \texttt{lowdem}: Lowest Polity IV score in the dyad.
+  \item \texttt{lowgdp}: Lowest GDP in the dyad.
+  \item \texttt{landcontig}: Indicator for contiguity on land (1 = contiguous, 0 = not).
+  \item \texttt{nlparity}: Parity of CINC scores.
   \item \texttt{beckpeace}: Peace year (Linear).
   \item \texttt{spline1}: Peace year spline 1.
   \item \texttt{spline2}: Peace year spline 2.
   \item \texttt{spline3}: Peace year spline 3.
-  \item \texttt{cvwonset}: Civil war onset.
+  \item \texttt{cvwonset}: Indicator for civil war onset (1 = civil war onset, 0 = no onset).
   \item \texttt{dyaddur}: Dyad age.
-  \item \texttt{samecolony}: Colonial history.
-  \item \texttt{ethborder}: Ethnic border.
-  \item \texttt{terrsim}: Terr. similarity.
-  \item \texttt{prev.mid.count}: Previous disputes.
-  \item \texttt{PostColdWar}: Post-Cold War.
-  \item \texttt{majdyad}: Major powers.
+  \item \texttt{samecolony}: Indicator for shared colonial history (1 = shared colonial history, 0 = none).
+  \item \texttt{ethborder}: Indicator for border dividing an ethnic group (1 = divided ethnic group, 0 = none).
+  \item \texttt{terrsim}: Similarity of percentages of mountainous terrain.
+  \item \texttt{prev.mid.count}: Count of previous disputes.
+  \item \texttt{PostColdWar}: Indicator for a post--Cold War observation (1 = post--Cold War, 0 = not).
+  \item \texttt{majdyad}: Indicator for whether at least one member of the dyad is a major power (1 = yes, 0 = no).
 \end{itemize}
 
 
@@ -414,14 +413,14 @@ Obtained from \citet{salehyan2008jopdata}.
   \item \texttt{ccode1}: Country code for state 1.
   \item \texttt{ccode2}: Country code for state 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{cwhostd}: Militarized interstate dispute onset.
-  \item \texttt{extbase}: External base.
-  \item \texttt{intriv}: Intervention (Reagan).
-  \item \texttt{lcaprat}: Power ratio.
-  \item \texttt{defpact}: Defense pact.
-  \item \texttt{politylo}: Democracy.
+  \item \texttt{cwhostd}: Indicator for militarized interstate dispute onset (1 = dispute onset, 0 = no onset).
+  \item \texttt{extbase}: Indicator for whether one state in the dyad is hosting rebels from the other (1 = yes, 0 = no).
+  \item \texttt{intriv}: Indicator for international rivalry (1 = rivalry, 0 = none).
+  \item \texttt{lcaprat}: Logarithm of capability ratio.
+  \item \texttt{defpact}: Indicator for presence of a defense pact between countries (1 = yes, 0 = no).
+  \item \texttt{politylo}: Lower Polity IV score in the dyad.
   \item \texttt{peaceyears}: Peace years.
-   \item \texttt{s1}: Spline 1.
+  \item \texttt{s1}: Spline 1.
   \item \texttt{s2}: Spline 2.
   \item \texttt{s3}: Spline3.
 \end{itemize}
@@ -436,22 +435,22 @@ Obtained from \citet{salehyan2008ajpsdata}.
   \item \texttt{ccode1}: Country code for state 1.
   \item \texttt{ccode2}: Country code for state 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{mzinit\_lead}: Militarized interstate disputes.
-  \item \texttt{logref1}: Refugee stock in initiator.
-  \item \texttt{logref2}: Refugee stock from initiator.
-  \item \texttt{uppcivcon1}: Civil war in initiator.
-  \item \texttt{uppcivcon2}: Civil war in target.
-  \item \texttt{dem1}: Democracy of initiator.
-  \item \texttt{dem2}: Democracy of target.
-  \item \texttt{trans1}: Transitional initiator.
-  \item \texttt{trans2}: Transitional target.
-  \item \texttt{contig}: Contiguity
-  \item \texttt{colcont}: Colonial contiguity.
-  \item \texttt{capshare}: Capability share.
+  \item \texttt{mzinit\_lead}: Indicator for a militarized interstate dispute (1 = dispute, 0 = no dispute).
+  \item \texttt{logref1}: Logged refugee stock in state 1.
+  \item \texttt{logref2}: Logged refugee stock from state 1.
+  \item \texttt{uppcivcon1}: Indicator for civil war in state 1 (1 = civil war, 0 = none).
+  \item \texttt{uppcivcon2}: Indicator for civil war in state 2 (1 = civil war, 0 = none).
+  \item \texttt{dem1}: Indicator for state 1 being a democracy (1 = democratic, 0 = not).
+  \item \texttt{dem2}: Indicator for state 2 being a democracy (1 = democratic, 0 = not).
+  \item \texttt{trans1}: Indicator for regime instability in state 1 (1 = instability, 0 = none).
+  \item \texttt{trans2}:  Indicator for regime instability in state 2 (1 = instability, 0 = none).
+  \item \texttt{contig}: Indicator for contiguity (1 = contiguous, 0 = not).
+  \item \texttt{colcont}: Indicator for contiguity through colonies or dependencies (1 = contiguous, 0 = not).
+  \item \texttt{capshare}: State 1's share of CINC capabilities.
   \item \texttt{s\_wt\_glo}: Alliance S-score.
-  \item \texttt{depend1}: Initiator's trade dependency.
-  \item \texttt{depend2}: Target's trade dependency.
-  \item \texttt{igos}: Shared IGO membership.
+  \item \texttt{depend1}: State 1's trade dependency.
+  \item \texttt{depend2}: State 2's trade dependency.
+  \item \texttt{igos}: Count of shared IGO memberships.
   \item \texttt{lpcyrs}: Peace years.
   \item \texttt{lpcyrs1}: Peace years spline 1.
   \item \texttt{lpcyrs2}: Peace years spline 2.
@@ -459,7 +458,7 @@ Obtained from \citet{salehyan2008ajpsdata}.
 \end{itemize}
 
 
-\subsection{data-sai-2006.csv}
+\subsection{data-sobek-abouharb-ingram-2006.csv}
 
 Replication data for \citet{Sobek:2006cn}.
 Obtained from \citet{sobek2006data}.
@@ -468,24 +467,24 @@ Obtained from \citet{sobek2006data}.
   \item \texttt{ccode1}: Country code for state 1.
   \item \texttt{ccode2}: Country code for state 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{cwmid}: Onset of international conflict.
-  \item \texttt{demlow}: Low democracy.
-  \item \texttt{demhigh}: High democracy.
+  \item \texttt{cwmid}: Indicator for onset of militarized interstate dispute (1 = dispute onset, 0 = none).
+  \item \texttt{demlow}: Minimum Polity IV score.
+  \item \texttt{demhigh}: Maximum Polity IV score.
   \item \texttt{caprat}: Capability ratio.
-  \item \texttt{ally}: Allies.
-  \item \texttt{disimciv}: Dissimilar civilizations.
-  \item \texttt{s\_un\_glo}: Preference similarity.
-  \item \texttt{pol\_rel}: Political relevance.
-  \item \texttt{contig}: Contiguity.
-  \item \texttt{physintlow}: Physical integrity index.
-  \item \texttt{empinxlow}: Empowerment rights index.
+  \item \texttt{ally}: Indicator for military alliance (1 = alliance, 0 = none).
+  \item \texttt{disimciv}: Indicator for dissimilar civilizations (1 = dissimilar, 0 = not).
+  \item \texttt{s\_un\_glo}: S-score measure of preference similarity.
+  \item \texttt{pol\_rel}: Indicator for political relevance (1 = politically relevant, 0 = not).
+  \item \texttt{contig}: Indicator for contiguity (1 = contiguous, 0 = not).
+  \item \texttt{physintlow}: Lower value on the physical integrity index.
+  \item \texttt{empinxlow}: Lower value on the empowerment rights index.
   \item \texttt{peaceyearsmid}: Peace years.
   \item \texttt{\_spline1mid}: Spline 1.
   \item \texttt{\_spline2mid}: Spline 2.
   \item \texttt{\_spline3mid}: Spline 3.
 \end{itemize}
 
-\subsection{data-usg-2012.csv}
+\subsection{data-uzonyi-souva-golder-2012.csv}
 
 Replication data for \citet{Uzonyi:2012im}.
 Obtained from \citet{uzonyi2012data}.
@@ -494,33 +493,31 @@ Obtained from \citet{uzonyi2012data}.
   \item \texttt{ccode1}: Country code for state 1.
   \item \texttt{ccode2}: Country code for state 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{cowrecipx}: MID reciprocation.
-  \item \texttt{acc1nomvx}: Audience cost capacity
-  \item \texttt{personal1w}: Personalist.
-  \item \texttt{single1w}: Single-party.
-  \item \texttt{military1w}: Military.
-  \item \texttt{hybrid1w}: Hybrid.
-  \item \texttt{other1w}: Other autocracy.
-  \item \texttt{dynastic1w}: Dynastic.
-  \item \texttt{nondynastic1w}: Non-dynastic.
-  \item \texttt{interregnaw}: Interregna autocracy
-  \item \texttt{interregnademw}: Interregna democracy
-  \item \texttt{majmaj}: Initiator major power, target major power.
-  \item \texttt{minmaj}: Initiator minor power, target major power.
-  \item \texttt{majmin}: Initiator major power, target minor power.
-  \item \texttt{powerratio}: Power ratio.
-  \item \texttt{allies}: Alliance.
-  \item \texttt{s\_wt\_glo}: Allies dyadic alliance portfolio summary.
-  \item \texttt{s\_ld\_1}: Initiator's alliance portfolio similarity with the regional leader.
-  \item \texttt{s\_ld\_2}: Target's alliance portfolio similarity with the regional leader.
-  \item \texttt{contig400}: Contiguity
-  \item \texttt{terr1}: Territorial dispute.
-  \item \texttt{regime1}: Regime dispute.
-  \item \texttt{policy1}: Policy dispute.
-  \item \texttt{other1}: Other dispute.
-  \item \texttt{originator}
-  \end{itemize}
-
+  \item \texttt{cowrecipx}: Indicator for militarized interstate dispute reciprocation (1 = reciprocated, 0 = not).
+  \item \texttt{acc1nomvx}: Categorical variable for state 1 audience cost capacity (0 = no capacity, 1 = low capacity, 2 = medium capacity, 3 = high capacity).
+  \item \texttt{personal1w}: Indicator for state 1 personality regime (1 = personalist, 0 = not).
+  \item \texttt{single1w}: Indicator for state 1 single-party regime (1 = single-party, 0 = not).
+  \item \texttt{military1w}: Indicator for state 1 military regime (1 = military, 0 = not).
+  \item \texttt{hybrid1w}: Indicator for state 1 hybrid regime (1 = hybrid, 0 = not).
+  \item \texttt{other1w}: Indicator for state 1 other autocratic regime (1 = other autocratic, 0 = not).
+  \item \texttt{dynastic1w}: Indicator for state 1 dynastic monarchy (1 = dynastic, 0 = not).
+  \item \texttt{nondynastic1w}: Indicator for state 1 non-dynastic monarchy (1 = non-dynastic, 0 = not).
+  \item \texttt{interregnaw}: Indicator for state 1 interregnum autocracy (1 = interregnum autocracy, 0 = not).
+  \item \texttt{interregnademw}: Indicator for state 1 interregnum democracy (1 = interregnum democracy, 0 = not).
+  \item \texttt{majmaj}: Indicator for state 1 major power, state 2 major power (1 = yes, 0 = no).
+  \item \texttt{minmaj}: Indicator for state 1 minor power, state 2 major power (1 = yes, 0 = no).
+  \item \texttt{majmin}: Indicator for state 1 major power, state 2 minor power (1 = yes, 0 = no).
+  \item \texttt{powerratio}: Capability ratio.
+  \item \texttt{allies}: Indicator for alliance (1 = alliance, 0 = none).
+  \item \texttt{s\_wt\_glo}: S-score measure of alliance portfolio similiarity.
+  \item \texttt{s\_ld\_1}: State 1's S-score with the regional leader.
+  \item \texttt{s\_ld\_2}: State 2's S-score with the regional leader.
+  \item \texttt{contig400}: Indicator for contiguity (1 = contiguous, 0 = not).
+  \item \texttt{terr1}: Indicator for territorial dispute (1 = territorial dispute, 0 = not).
+  \item \texttt{regime1}: Indicator for regime dispute (1 = regime dispute, 0 = not).
+  \item \texttt{policy1}: Indicator for policy dispute (1 = policy dispute, 0 = not).
+  \item \texttt{other1}: Indicator for other dispute (1 = other dispute, 0 = not).
+\end{itemize}
 
 \subsection{data-weeks-2008.csv}
 
@@ -531,21 +528,21 @@ Obtained from \citet{weeks2008data}.
   \item \texttt{ccodecow}: Country code for state 1.
   \item \texttt{ccodecow2}: Country code for state 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{regimetype1}: Regime type.
-  \item \texttt{majpow1}: State 1 major power.
-  \item \texttt{majpow2}: State 2 major power.
-  \item \texttt{contig}: Contiguity.
-  \item \texttt{s\_wt\_glo}: Alliance portfolio similarity.
-  \item \texttt{s\_ld\_1}: Status quo evaluation initiator.
-  \item \texttt{s\_ld\_2}: Status quo evaluation target.
-  \item \texttt{cwhost2}: Militarized interstate dispute onset.
-  \item \texttt{cap\_1}: Capability of state 1.
-  \item \texttt{cap\_2}: Capability of state 2. 
-  \item \texttt{alliance}: Alliance.
-  \item \texttt{cwrevt11}: Civil war 
-  \item \texttt{cwnumst1}: Number of disputes in state 1.
-  \item \texttt{cwnumst2}: Number of disputes in state 2.
-  \item \texttt{abbrev1}: Country abbreviation.
+  \item \texttt{regimetype1}: Categorical variable for regime type (1 = democracy, 2 = personalist, 3 = military, 4 = single-party, 5 = hybrid, 6 = dynastic monarchy, 7 = non-dynastic monarchy, 8 = autocratic interregnum, 9 = no information, 10 = other, 11 = democratic interregnum).
+  \item \texttt{majpow1}: Indicator for whether state 1 is a major power (1 = yes, 0 = no).
+  \item \texttt{majpow2}: Indicator for whether state 2 is a major power (1 = yes, 0 = no).
+  \item \texttt{contig}: Categorical variable for contiguity (1 = land or river border, 2 = separated by less than 12 miles of water, 3 = separated by 12--24 miles of water, 4 = separated by 25--150 miles of water, 5 = separated by 151--400 miles of water, 6 = separated by more than 400 miles of water).
+  \item \texttt{s\_wt\_glo}: S-score for alliance portfolio similarity.
+  \item \texttt{s\_ld\_1}: Status quo evaluation of state 1.
+  \item \texttt{s\_ld\_2}: Status quo evaluation of state 2.
+  \item \texttt{cwhost2}: Categorical variable for level of reciprocation by state 2 (1 = no militarized action, 2 = threat to use force, 3 = display of force, 4 = use of force, 5 = war).
+  \item \texttt{cap\_1}: CINC score of state 1.
+  \item \texttt{cap\_2}: CINC score of state 2. 
+  \item \texttt{alliance}: Categorical variable for strength of military alliance ($-$9 = missing, 1 = defense pact, 2 = neutrality pact, 3 = entente, 4 = no alliance).
+  \item \texttt{cwrevt11}: Categorical variable for type of revision (0 = none, 1 = territorial, 2 = policy, 3 = government, 4 = other).
+  \item \texttt{cwnumst1}: Number of states on state 1's side in dispute.
+  \item \texttt{cwnumst2}: Number of states on state 2's side in dispute.
+  \item \texttt{abbrev1}: Country abbreviation for state 1.
 \end{itemize}
 
 
@@ -558,27 +555,27 @@ Obtained from \citet{weeks2012data}.
   \item \texttt{ccode1}: Country code for state 1.
   \item \texttt{ccode2}: Country code for state 2.
   \item \texttt{year}: Year of observation.
-  \item \texttt{mzinit}: Militarized dispute onset.
-  \item \texttt{machinejlw\_1}: Initiator is machine.
-  \item \texttt{juntajlw\_1}: Initiator is junta.
-  \item \texttt{bossjlw\_1}: Initiator is boss.
-  \item \texttt{strongmanjlw\_1}: Initiator is strongman.
-  \item \texttt{allotherauts\_1}: Initiator is other nondemocracies.
-  \item \texttt{newregime\_1}: Initiator is new/unstable regime.
-  \item \texttt{democracy\_1}: Initiator democracy.
-  \item \texttt{democracy\_2}: Target democracy.
-  \item \texttt{cap\_1}: Capabilities of state 1.
-  \item \texttt{cap\_2}: Capabilities of state 2. 
-  \item \texttt{initshare}: State 1's proportion of dyadic capabilities.
+  \item \texttt{mzinit}: Indicator for militarized interstate dispute initiation (1 = initiation, 0 = no initiation).
+  \item \texttt{machinejlw\_1}: Indicator for state 1's regime type being a machine (1 = yes, 0 = no).
+  \item \texttt{juntajlw\_1}: Indicator for state 1's regime type being a junta (1 = yes, 0 = no).
+  \item \texttt{bossjlw\_1}: Indicator for state 1's regime type being a boss (1 = yes, 0 = no).
+  \item \texttt{strongmanjlw\_1}: Indicator for state 1's regime type being a strongman (1 = yes, 0 = no).
+  \item \texttt{allotherauts\_1}: Indicator for state 1's regime type being any other autocracy (1 = yes, 0 = no).
+  \item \texttt{newregime\_1}: Indicator for state 1's regime type being a new or unstable regime (1 = yes, 0 = no).
+  \item \texttt{democracy\_1}: Indicator for state 1's regime type being democratic (1 = yes, 0 = no).
+  \item \texttt{democracy\_2}: Indicator for state 2's regime type being democratic (1 = yes, 0 = no).
+  \item \texttt{cap\_1}: CINC score of state 1.
+  \item \texttt{cap\_2}: CINC score of state 2. 
+  \item \texttt{initshare}: State 1's ratio of dyadic capabilities.
   \item \texttt{dependlow}: Lower trade dependence in dyad.
-  \item \texttt{majmaj}: Initiator major power, target major power.
-  \item \texttt{minmaj}: Initiator minor power, target major power.
-  \item \texttt{majmin}: Initiator major power, target minor power.
-  \item \texttt{contigdum}: Contiguity.
-  \item \texttt{logdist}: Logged distance between capitals.
-  \item \texttt{s\_wt\_glo}: Alliance portfolio similarity.
-  \item \texttt{s\_lead\_1}: Status quo evaluation initiator.
-  \item \texttt{s\_lead\_2}: Status quo evaluation target.
+  \item \texttt{majmaj}: Indicator for state 1 major power, state 2 major power (1 = yes, 0 = no).
+  \item \texttt{minmaj}: Indicator for state 1 minor power, state 2 major power (1 = yes, 0 = no).
+  \item \texttt{majmin}: Indicator for state 1 major power, state 2 minor power (1 = yes, 0 = no).
+  \item \texttt{contigdum}: Indicator for contiguity (1 = contiguous, 0 = not).
+  \item \texttt{logdist}: Logged distance between state capitals.
+  \item \texttt{s\_wt\_glo}: S-score for portfolio similarity.
+  \item \texttt{s\_lead\_1}: Status quo evaluation of initiator.
+  \item \texttt{s\_lead\_2}: Status quo evaluation of target.
   \item \texttt{pcyrsmzinit}: Peace years linear.
   \item \texttt{pcyrsmzinits1}: Peace years spline 1.
   \item \texttt{pcyrsmzinits2}: Peace years spline 2.
@@ -596,15 +593,16 @@ Obtained from \citet{zawahri2011data}.
   \item \texttt{ccode2}: Country code for state 2.
   \item \texttt{year}: Year of observation.
   \item \texttt{dyadcode}: Dyad code.
-  \item \texttt{bilattreaty}: Bilateral treaty.
+  \item \texttt{bilattreaty}: Indicator for bilateral treaty formation (1 = treaty, 0 = no treaty).
   \item \texttt{percentarealow}: Percent lowest area in basin.
   \item \texttt{waterdependlow}: Lowest water dependence.
   \item \texttt{avgpreciplow}: Lowest average precipitation.
-  \item \texttt{lowpolity}: Lowest polity score.
-  \item \texttt{samelegal}: Same legal system.
+  \item \texttt{lowpolity}: Lowest Polity IV score.
+  \item \texttt{samelegal}: Indicator for having the same legal system (1 = yes, 0 = no).
   \item \texttt{upstreampower}: Upstream state CINC score.
   \item \texttt{downstreampower}: Downstream state CINC score.
-  \item \texttt{upstreamstate}: Upstream state indicator.
+  \item \texttt{bilatbasin}: Indicator for bilateral river basin (1 = bilateral, 0 = not bilateral).
+  \item \texttt{upstreamstate}: Categorical variable for which state is upstream (A = state 1, B = state 2, AB = both).
 \end{itemize}
 
 
@@ -649,17 +647,6 @@ Each observation is one of the studies reanalyzed in the replication analysis.
 \bibliographystyle{apsr}
 \bibliography{doe}
 
-
-\appendix
-\section{Appendix: External Codebooks}
-
-\subsection{Militarized Interstate Disputes Data}
-
-\includepdf[pages=-]{MID-Codebook.pdf}
-
-\subsection{National Material Capabilities Data}
-
-\includepdf[pages=-]{NMC-Codebook.pdf}
 
 \end{document}
 
