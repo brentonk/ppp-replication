@@ -166,13 +166,20 @@ If you choose not to use the provided Docker environment, then you must install 
 Some portions of the analysis are computationally intensive and are designed to be run in parallel.  You should have access to a computing cluster if you want to replicate the analysis in a reasonable amount of time.
 
 
+## Note on Exact Replication
+
+This analysis involves many layers of computation: multiple imputation of the underlying data, creation of an ensemble of machine learning models on the imputed datasets, predictions from that ensemble, and replications of previous studies using those predictions.
+
+Our replication code sets seeds in any script where random numbers are drawn, and runs in a Docker environment to ensure identical package versions across machines.  Nevertheless, because of differences in machine precision and floating point computations across CPUs, the replication code may not produce results *identical* to those in the paper.  Any differences should be small in magnitude and should not affect any substantive conclusions of the analysis.^[For a primer on floating point computation, see David Goldberg, "What every computer scientist should know about floating-point arithmetic," *ACM Computing Surveys (CSUR)* 23, no. 1 (1991): 5--48.]
+
+
 ## R Scripts
 
 The R scripts should be run in the order they are numbered.  Some of the scripts should be run multiple times with different command line arguments; these can be run in parallel.  The file `_all.sh` provides the exact commands to run.
 
 All scripts should be run at the command line using `Rscript`.  Some require command line arguments, as specified in the instructions below.
 
-To ensure exact replication, or if you cannot install the correct version of R and the specified packages on your system, you should use the Docker image, as specified in the instructions above and in `_all.sh`.  When running in Docker, make sure there is a volume that points from the location of the replication files on your system to the directory `/home/kenkelb/pppr` within the container.  For example, if the files live on your machine in `/Users/yourname/Downloads/pppr`, the command to run the first script is
+For best results, particularly if you cannot install the correct version of R and the specified packages on your system, you should use the Docker image, as specified in the instructions above and in `_all.sh`.  When running in Docker, make sure there is a volume that points from the location of the replication files on your system to the directory `/home/kenkelb/pppr` within the container.  For example, if the files live on your machine in `/Users/yourname/Downloads/pppr`, the command to run the first script is
 
     docker run --rm -it \
       -v /Users/yourname/Downloads/pppr:/home/kenkelb/pppr \
